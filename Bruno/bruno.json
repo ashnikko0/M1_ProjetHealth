@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "M1 Project Health",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
