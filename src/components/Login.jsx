@@ -11,7 +11,7 @@ function Login() {
     
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>
-        <p> test amandine </p>
+        <h1>Connexion</h1>
         Username
         <input {...register("username")} />
       </label>
