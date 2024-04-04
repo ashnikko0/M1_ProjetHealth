@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import "./styles.css";
+import "../index.css";
 
 function Login() {
 
@@ -13,11 +13,11 @@ function Login() {
       <label>
         <h1>Connexion</h1>
         Username
-        <input {...register("username")} />
+        <input className="inputSaisie" {...register("username")} />
       </label>
       <label>
         Password
-        <input type="password" {...register("pasword")} />
+        <input className="inputSaisie" type="password" {...register("password")} />
       </label>
 
       <input type="submit" value="Login"></input>
