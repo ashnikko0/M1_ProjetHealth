@@ -7,6 +7,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  /*mettre des variables biens pour les couleurs*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,9 +44,7 @@ h1 {
 }
 p {
   font-family:"Inter";
-  letter-spacing: 0.55px;
   font-size: 16px;
-  line-height: 28px;
 }
 
 .inputSaisie{   
@@ -62,10 +61,11 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
+.logo{
+  height: 200px;
+}
 
 button {
   border-radius: 8px;
@@ -73,7 +73,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Inter";
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
