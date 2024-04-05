@@ -16,6 +16,8 @@ function Login() {
       axios.post(api, d)
       .then(function (response) {
         console.log(response);
+        localStorage.setItem("authData", response.data.data.access_token);
+        localStorage.setItem("refreshToken", response.data.data.refresh_token);
       })
       .catch(function (error) {
         console.log(error);
