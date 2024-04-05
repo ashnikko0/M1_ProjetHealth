@@ -31,7 +31,6 @@ function ClientList() {
       } catch (error) {
         setIsError(true);
         setIsLoading(false);
-        console.error(error);
       }
     }
 
