@@ -25,7 +25,7 @@ function Login() {
         localStorage.setItem("auth_token", response.data.data.access_token);
         localStorage.setItem("refresh_token", response.data.data.refresh_token);
 
-        navigate ("/dashboard");
+        navigate("/dashboard");
       })
       .catch(function (error) {
         setIsError(true);

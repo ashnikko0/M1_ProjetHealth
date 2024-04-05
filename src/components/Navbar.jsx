@@ -9,8 +9,8 @@ export default function Nav(){
   return(
         <div className="navbar">
            <ul className="nav-links">
-              <Link to="/"> <img src={log} alt= "Login"/> </Link>   
-              <Link to="/dashboard"> <img src={dashboard} alt= "Dashboard"/> </Link>               
+              <Link to="/"> <img src={log} alt= "Login"/></Link>   
+              <Link to="/dashboard"> <img src={dashboard} alt= "Dashboard"/></Link>               
            </ul>
         </div>
   );
