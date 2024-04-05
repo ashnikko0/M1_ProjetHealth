@@ -14,21 +14,16 @@ function Login() {
 
       const api = "https://health.shrp.dev/auth/login";
 
-      console.log(d);
-
       axios.post(api, d)
       .then(function (response) {
 
         setIsError(false);
-
-        console.log(response);
 
         localStorage.setItem("authData", response.data.data.access_token);
         localStorage.setItem("refreshToken", response.data.data.refresh_token);
       })
       .catch(function (error) {
         setIsError(true);
-        console.log(error);
       });
 
   };
