@@ -11,7 +11,7 @@ export default function Nav(){
               <Link to="/login">Login</Link>
                   <img src={log.png} alt= "Login"/>
               <Link to="/clients_list">Clients List</Link>
-                  <img src={stats.png} alt= "ListeClients"/>
+                  <img src={list.png} alt= "ListeClients"/>
            </ul>
         </div>
   );
