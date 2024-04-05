@@ -9,7 +9,7 @@ function Login() {
   const {register, handleSubmit} = useForm();
   const onSubmit = (d) => {
 
-      const api = "https://pizzas.shrp.dev/auth/login";
+      const api = "https://health.shrp.dev/auth/login";
 
       console.log(d);
 
