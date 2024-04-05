@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
 function ClientCard({ client }) {
+
   return (
     <div className="client-card">
       <h2>{client.firstname} {client.lastname}</h2>
