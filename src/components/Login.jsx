@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 import "../index.css";
@@ -8,8 +9,10 @@ import logo from "../assets/logo.png";
 function Login() {
   
   const [isError, setIsError] = useState(false);
-
   const {register, handleSubmit} = useForm();
+  const navigate = useNavigate();
+
+
   const onSubmit = (d) => {
 
       const api = "https://health.shrp.dev/auth/login";
@@ -19,8 +22,10 @@ function Login() {
 
         setIsError(false);
 
-        localStorage.setItem("authData", response.data.data.access_token);
-        localStorage.setItem("refreshToken", response.data.data.refresh_token);
+        localStorage.setItem("auth_token", response.data.data.access_token);
+        localStorage.setItem("refresh_token", response.data.data.refresh_token);
+
+        navigate ("/dashboard");
       })
       .catch(function (error) {
         setIsError(true);
