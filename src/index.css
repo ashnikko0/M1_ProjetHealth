@@ -98,6 +98,7 @@ button:focus-visible {
   }
   .sexIcon{
     fill: #000000;
+    /*marche pas, voir pour que la couleur s'adapte au thème de l'ordi*/
   }
 }
 
@@ -108,4 +109,11 @@ button:focus-visible {
   font-family: "Inter";
   outline: none;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05)
+}
+
+.client-list{
+  display: grid;
+  width:max-content;
+  grid-auto-flow: row;
+  grid-row-gap: 20px;
 }
