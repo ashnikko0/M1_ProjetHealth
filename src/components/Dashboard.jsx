@@ -1,6 +1,6 @@
 import "../index.css";
 
-import ClientList from "./ClientList";
+import ClientList from "./ClientList.jsx";
 
 function Dashboard() {
 
