@@ -5,20 +5,21 @@ import "../index.css";
 import logo from "../assets/logo.png";
 
 function Login() {
-
   
   const {register, handleSubmit} = useForm();
   const onSubmit = (d) => {
 
-    const api = "https://health.shrp.dev/auth/login";
+      const api = "https://pizzas.shrp.dev/auth/login";
 
-    axios.post(api, d.getValues()
-    ).then(function(response) {
-      console.log('Authenticated');
-  }).catch(function(error) {
-      console.log('Error on Authentication');
-  });
+      console.log(d);
 
+      axios.post(api, d)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   };
   
@@ -30,8 +31,8 @@ function Login() {
       <div>
       <label>
         <h1>Connexion</h1>
-        <p>Nom d'utilisateur</p>
-        <input className="inputSaisie" {...register("username")} />
+        <p>Adresse mail</p>
+        <input className="inputSaisie" {...register("email")} />
       </label>
       </div>
       
