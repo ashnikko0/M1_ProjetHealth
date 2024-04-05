@@ -7,11 +7,11 @@ export default function Nav(){
         <div className="navbar">
            <ul className="nav-links">
               <Link to="/">TableauDeBord</Link>
-                  <img src={dashboard.png} alt= "TableauDeBord"/>
+                  <img src={"../assets/dashboard.png"} alt= "TableauDeBord"/> //ici ça link avec les img
               <Link to="/login">Login</Link>
-                  <img src={log.png} alt= "Login"/>
+                  <img src={"../assets/log.png"} alt= "Login"/>
               <Link to="/clients_list">Clients List</Link>
-                  <img src={list.png} alt= "ListeClients"/>
+                  <img src={"../assets/list.png"} alt= "ListeClients"/>
            </ul>
         </div>
   );
