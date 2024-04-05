@@ -23,6 +23,7 @@ function ClientList() {
 
         const data = await response.data.data;
 
+
         setClients(data);
         setIsLoading(false);
         setIsError(false);
@@ -43,7 +44,7 @@ function ClientList() {
       {isLoading && <p>Chargement...</p>}
       {isError && <p>Une erreur s'est produite</p>}
       {clients.map((client) => (
-        <ClientCard key={client.id} client={client}></ClientCard>
+        <ClientCard key={client.id} client={client}/>
       ))}
     </div>
   );
