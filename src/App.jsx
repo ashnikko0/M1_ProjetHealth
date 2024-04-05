@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import ClientList from './components/ClientList.jsx'
 import Login from './components/Login.jsx'
-import TableauDeBord from './components/TableauDeBord.jsx'
+import Dashboard from './components/Dashboard.jsx'
 
 function App() {
 
@@ -13,9 +13,8 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<TableauDeBord />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/clients_list" element={<ClientList />} />
       </Routes>
   </BrowserRouter>
   )
