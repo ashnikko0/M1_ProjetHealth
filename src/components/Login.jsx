@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
+
 import "../index.css";
 import logo from "../assets/logo.png";
 
@@ -6,7 +8,19 @@ function Login() {
 
   
   const {register, handleSubmit} = useForm();
-  const onSubmit = (d) => alert(JSON.stringify(d));
+  const onSubmit = (d) => {
+
+    const api = "https://health.shrp.dev/auth/login";
+
+    axios.post(api, d.getValues()
+    ).then(function(response) {
+      console.log('Authenticated');
+  }).catch(function(error) {
+      console.log('Error on Authentication');
+  });
+
+
+  };
   
   return (
     
