@@ -9,6 +9,7 @@ function ClientCard({ client }) {
   return (
     <div className="client-card">
        <Link to={ClientDetails}>
+        
         <div>
         <h2>{client.firstname} {client.lastname}</h2>
         </div>

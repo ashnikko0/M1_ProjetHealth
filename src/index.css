@@ -133,3 +133,22 @@ button:focus-visible {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.search-bar{
+  width:100%;
+}
+/* ^^^^ moi ici je voulais que ça fill toute la largeur de la div parent*/
+.search-input{
+  height: 2rem;
+  border:1px solid grey;
+  border-radius : 30px;
+  font-family: "Inter";
+  outline: none;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05)
+}
+
+
+.search-icon{
+  height: 20px;
+  fill:#f3f3f3
+}
