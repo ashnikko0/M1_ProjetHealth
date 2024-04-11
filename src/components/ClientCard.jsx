@@ -1,12 +1,13 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
+import { Link } from 'react-router-dom';
 
 function ClientCard({ client }) {
 
   //chaque div de la card aura un style particulier
   return (
     <div className="client-card">
-
+       <Link to={"/people/${client.id}"}></Link>
       <div>
       <h2>{client.firstname} {client.lastname}</h2>
       </div>
@@ -30,4 +31,4 @@ export default ClientCard;
 /*faire un beau découpage pour avoir des belles cartes
 
 -afficher un icone si l'objectif poids est atteint 
--ajouter des photos de gens ? */
+-ajouter des photos/image de gens ? */
