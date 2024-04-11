@@ -17,8 +17,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/client/:id" element={<ClientDetails />} />
       </Routes>
+      
   </BrowserRouter>
   )
 }
+/* faire un cas pour tous les liens qui ne sont pas supportés (une genre de page erreur) */
 
 export default App
