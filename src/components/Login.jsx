@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 
 import "../index.css";
@@ -8,6 +9,8 @@ import logo from "../assets/logo.png";
 
 function Login() {
   
+  const { authError } = useParams();
+
   const [isError, setIsError] = useState(false);
   const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
@@ -22,8 +25,12 @@ function Login() {
 
         setIsError(false);
 
-        localStorage.setItem("auth_token", response.data.data.access_token);
-        localStorage.setItem("refresh_token", response.data.data.refresh_token);
+        localStorage.setItem("user_data", JSON.stringify({
+          "email": d.email,
+          "auth_token": response.data.data.access_token,
+          "token_expiration_date": Date.now() + response.data.data.expires,
+          "refresh_token": response.data.data.refresh_token,
+        }));
 
         navigate("/dashboard");
       })
@@ -43,6 +50,8 @@ function Login() {
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
+      {authError === "timeout" && <div>Session expirée, veuillez vous reconnecter.</div>}
+      {authError === "login" && <div>Page inaccessible, veuillez vous reconnecter.</div>}
       {isError && <div>Email ou mot de passe incorrect.</div>}
 
       <div>

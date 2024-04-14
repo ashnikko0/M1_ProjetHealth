@@ -10,8 +10,8 @@ function Dashboard() {
       
     return (
         <div>
-        <SearchBar />
-        <ClientList searchQuery={searchQuery} />
+            <SearchBar />
+            <ClientList searchQuery={searchQuery} />
         </div>
     )
 /*TODO faire que la recherche est lancé via une requete à l'API, on cherche le nom OU le prénom */

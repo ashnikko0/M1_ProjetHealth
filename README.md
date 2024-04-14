@@ -26,12 +26,12 @@
     - [ ] Partage de données avec useContext,
     - [X] Initialisation des requêtes auprès de l'API avec useEffect.
 - [X] Formulaire de connexion : Sign In (récupération de l'access_token JWT).
-- [ ] Affichage de l'état de connexion de l'utilisateur courant dans l'UI (ex : "john@doe.com est connecté"),
-- [ ] Bouton de déconnexion (Sign Out) de l'utilisateur courant.
+- [x] Affichage de l'état de connexion de l'utilisateur courant dans l'UI (ex : "john@doe.com est connecté"),
+- [x] Bouton de déconnexion (Sign Out) de l'utilisateur courant.
 
 ## Fonctionnalités optionnelles
 
 - [X] Conservation de l'access_token dans le localstorage dans la mémoire vive de l'application,
-- [ ] Emploi du refresh_token pour obtenir un nouvel access_token et éviter la déconnexion de l'utilisateur courant,
-- [ ] Interactions avec des routes privées de l'API en communiquant l'access_token dans le header HTTP authorization en mode Bearer (ex : endpoint /items/psychicData).
+- [x] Emploi du refresh_token pour obtenir un nouvel access_token et éviter la déconnexion de l'utilisateur courant,
+- [x] Interactions avec des routes privées de l'API en communiquant l'access_token dans le header HTTP authorization en mode Bearer (ex : endpoint /items/psychicData).
 - [ ] Intégration d'1 ou plusieurs autres API tierce(s) au projet.

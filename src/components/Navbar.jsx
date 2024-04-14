@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dashboard from "../assets/dashboard.png";
 import log from "../assets/log.png";
-import list from "../assets/list.png";
 
 export default function Nav(){
 
