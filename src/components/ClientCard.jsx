@@ -1,13 +1,14 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ClientCard({ client }) {
 
+  const navigate = useNavigate();
+
   //chaque div de la card aura un style particulier
   return (
-    <div className="client-card">
-       <Link to={"/client/" + client.id}>
+    <div className="client-card" onClick={() => navigate('/client/' + client.id, {state:{client}})}>
         
         <div>
         <h2>{client.firstname} {client.lastname}</h2>
@@ -23,7 +24,6 @@ function ClientCard({ client }) {
         <p>Objectif poids : {client.weightGoal}</p>
         </div>
       
-      </Link>
     </div>
     
   );
