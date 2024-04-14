@@ -1,14 +1,13 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import { Link } from 'react-router-dom';
-import ClientDetails from "./ClientDetails";
 
 function ClientCard({ client }) {
 
   //chaque div de la card aura un style particulier
   return (
     <div className="client-card">
-       <Link to={ClientDetails}>
+       <Link to={"/client/" + client.id}>
         
         <div>
         <h2>{client.firstname} {client.lastname}</h2>

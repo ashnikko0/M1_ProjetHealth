@@ -7,7 +7,7 @@ function Dashboard() {
 
     return (
         <div>
-        <SearchBar />;
+        <SearchBar />
         <ClientList />
         </div>
     )

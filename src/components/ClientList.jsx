@@ -40,7 +40,7 @@ function ClientList() {
 
   return (
     <div className="client-list">
-      {isLoading && <div class="loader"></div>}
+      {isLoading && <div className="loader"/>}
       {isError && <p>Une erreur s'est produite</p>}
       {clients.map((client) => (
         <ClientCard key={client.id} client={client}/>
