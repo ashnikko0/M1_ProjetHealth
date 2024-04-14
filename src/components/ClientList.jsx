@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ClientCard from './ClientCard';
 
-function ClientList() {
+function ClientList({ searchQuery }) {
 
   const [clients, setClients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,13 @@ function ClientList() {
   useEffect(() => {
     async function loadClients() {
 
-      const api = "https://health.shrp.dev/items/people";
+      let api = "";
+
+      if (searchQuery === undefined) {
+        api = "https://health.shrp.dev/items/people";
+      } else {
+        api = "https://health.shrp.dev/items/people?search=" + searchQuery;
+      }
 
       try {
 
