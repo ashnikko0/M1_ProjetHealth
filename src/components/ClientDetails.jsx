@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function ClientDetails() {
+  
   const { id } = useParams(); // Récupérer l'ID du client depuis l'URL
   const [client, setClient] = useState(null); // État pour stocker les détails du client
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadClients() {
@@ -39,7 +41,7 @@ function ClientDetails() {
   // Si les détails du client sont en cours de chargement, afficher un indicateur de chargement
   return (
     <div>
-      <Link to={"/dashboard"}>Back</Link>
+      <button onClick={() => navigate(-1)}>Back</button>
       {isLoading && <div className="loader"/>}
       {isError && <p>Une erreur s'est produite</p>}
       {client && <div>
