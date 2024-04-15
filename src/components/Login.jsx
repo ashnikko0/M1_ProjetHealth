@@ -44,10 +44,10 @@ function Login() {
   return (
     
     <>
-    <div class="titlefit">
-      <span class="titlebarre"></span>
-      <div class="fitready">Fit'Ready</div>
-      <span class="titlebarre"></span>
+    <div className="titlefit">
+      <span className="titlebarre"></span>
+      <div className="fitready">Fit'Ready</div>
+      <span className="titlebarre"></span>
     </div>
  
 
