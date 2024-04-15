@@ -109,7 +109,7 @@ function ClientDetails() {
         <div className="embla__container">
 
           <div className="embla__slide">
-            <h3>Détails</h3>
+            <h2>Détails</h2>
             {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
             <p>Année de naissance : {client.birthyear }</p>
             <p>Taille : {client.height}</p>
@@ -117,11 +117,12 @@ function ClientDetails() {
             <p>objectif IMC : {client.bmiGoal}</p>
             <p>Poids de départ : {client.weightStart}</p>
             <p>Objectif poids : {client.weightGoal}</p>
+            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="sexIcon"></img> : <p></p>}
             <p>Type de profil : {client.activityProfile}</p>
           </div>
 
           <div className="embla__slide">
-            <h3>Données physiologiques</h3>
+            <h2>Données physiologiques</h2>
             {isPhysioLoading && <div className="loader"/>}
             {isPhysioError && <p>Une erreur s'est produite</p>}
             {physioData && 
@@ -137,7 +138,7 @@ function ClientDetails() {
           </div>
 
           <div className="embla__slide">
-            <h3>Activités Physiques</h3>
+            <h2>Activités Physiques</h2>
             {isActivityLoading && <div className="loader"/>}
             {isActivityError && <p>Une erreur s'est produite</p>}
             {activityData && activityData.map((activity) => (
