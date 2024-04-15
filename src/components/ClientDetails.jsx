@@ -4,6 +4,7 @@ import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, Responsive
 import axios from 'axios';
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
+import back from "../assets/back.svg";
 
 function ClientDetails() {
 
@@ -47,9 +48,12 @@ function ClientDetails() {
   // Si les détails du client sont en cours de chargement, afficher un indicateur de chargement
   return (
     <div>
-      <button onClick={() => navigate(-1)}>Back</button>
-      <div>
+      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='sexIcon'/></button>
+
         <h1>{client.firstname} {client.lastname}</h1>
+
+
+        <div className="client-card" >
         {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
         <p>Année de naissance : {client.birthyear }</p>
         <p>Taille : {client.height}</p>
