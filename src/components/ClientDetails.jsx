@@ -10,6 +10,7 @@ import "./ClientDetails.css";
 
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
+import back from "../assets/back.svg";
 
 function ClientDetails() {
 
