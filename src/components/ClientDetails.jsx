@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
+import maleIcon from "../assets/maleIcon.svg";
+import femaleIcon from "../assets/femaleIcon.svg";
 
 function ClientDetails() {
 
@@ -47,16 +49,20 @@ function ClientDetails() {
     <div>
       <button onClick={() => navigate(-1)}>Back</button>
       <div>
-        <h1>Détails du client</h1>
-        <p>Nom: {client.firstname} {client.lastname}</p>
-        <p>Taille: {client.height}</p>
-        <p>Poids de départ: {client.weightStart}</p>
-        <p>Objectif poids: {client.weightGoal}</p>
+        <h1>{client.firstname} {client.lastname}</h1>
+        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
+        <p>Année de naissance : {client.birthyear }</p>
+        <p>Taille : {client.height}</p>
+        <p>IMC de départ : {client.bmiStart}</p>
+        <p>objectif IMC : {client.bmiGoal}</p>
+        <p>Poids de départ : {client.weightStart}</p>
+        <p>Objectif poids : {client.weightGoal}</p>
+        <p>Type de profil : {client.activityProfile}</p>
       </div>
       {isLoading && <div className="loader"/>}
       {isError && <p>Une erreur s'est produite</p>}
       {physioData && 
-        <ResponsiveContainer width="80%" height={200}>
+        <ResponsiveContainer width="100%" height={200} >
           <LineChart data={physioData}>
             <XAxis dataKey="date"/>
             <YAxis domain={['dataMin - 1', 'dataMax + 1']}/>
