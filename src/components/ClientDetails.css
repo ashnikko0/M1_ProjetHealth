@@ -1,10 +1,5 @@
 .slider {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-.slide {
-    width: 100%;
-    align-items: center;
+    position: absolute;
+    width: 90%;
 }
