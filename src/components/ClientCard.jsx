@@ -1,5 +1,6 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
+import trophy from "../assets/trophy.png";
 import { Link, useNavigate } from 'react-router-dom';
 
 function ClientCard({ client }) {
@@ -14,14 +15,15 @@ function ClientCard({ client }) {
         <h2>{client.firstname} {client.lastname}</h2>
         </div>
 
-        <div>
-        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
+        <div className="mid-part-card">
         <p>Taille : {client.height}</p>
+        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
         </div>
-
-        <div>
+        
+        <div className="bottom-part-card">
         <p>Poids de départ : {client.weightStart}</p>
         <p>Objectif poids : {client.weightGoal}</p>
+        {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="sexIcon"></img> : <p>NO</p>}
         </div>
       
     </div>
@@ -30,8 +32,3 @@ function ClientCard({ client }) {
 }
 
 export default ClientCard;
-
-/*faire un beau découpage pour avoir des belles cartes
-
--afficher un icone si l'objectif poids est atteint 
--ajouter des photos/image de gens ? */

@@ -11,6 +11,8 @@ import "./ClientDetails.css";
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import back from "../assets/back.svg";
+import trophy from "../assets/trophy.png";
+
 
 function ClientDetails() {
 
@@ -26,6 +28,7 @@ function ClientDetails() {
 
   const navigate = useNavigate();
   const location = useLocation();
+
 
   const slider_settings = {
     dots: true,
@@ -94,13 +97,13 @@ function ClientDetails() {
   return (
     <div>
 
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='sexIcon'/></button>
       <h1>{client.firstname} {client.lastname}</h1>
 
       <Slider {...slider_settings} className='slider'>
 
         <div className='slide'>
-          <h3>Détails</h3>
+          <h2>Détails</h2>
           {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
           <p>Année de naissance : {client.birthyear }</p>
           <p>Taille : {client.height}</p>
@@ -108,11 +111,13 @@ function ClientDetails() {
           <p>objectif IMC : {client.bmiGoal}</p>
           <p>Poids de départ : {client.weightStart}</p>
           <p>Objectif poids : {client.weightGoal}</p>
+          {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="sexIcon"></img> : <p></p>}
+
           <p>Type de profil : {client.activityProfile}</p>
         </div>
 
         <div className='slide'>
-          <h3>Données physiologiques</h3>
+          <h2>Données physiologiques</h2>
           {isPhysioLoading && <div className="loader"/>}
           {isPhysioError && <p>Une erreur s'est produite</p>}
           {physioData && 
@@ -128,7 +133,7 @@ function ClientDetails() {
         </div>
 
         <div className='slide'>
-          <h3>Activités Physiques</h3>
+          <h2>Activités Physiques</h2>
           {isActivityLoading && <div className="loader"/>}
           {isActivityError && <p>Une erreur s'est produite</p>}
           {activityData && activityData.map((activity) => (
