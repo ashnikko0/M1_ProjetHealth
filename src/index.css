@@ -33,6 +33,7 @@ a:hover {
 }
 
 h1 {
+  text-align: center;
   font-size: 2em;
   line-height: 1.1;
   font-family: "Oswald";
@@ -41,6 +42,18 @@ h1 {
   font-weight: 500;
   line-height: 1.1;
 }
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.1;
+  font-family: "Oswald";
+  font-weight: bold;
+  text-transform:uppercase;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 p {
   font-family:"Inter";
   font-size: 16px;
@@ -136,19 +149,18 @@ button:focus-visible {
 .client-card{
   border:1px solid grey;
   border-radius : 30px;
-  height: 100%;
   font-family: "Inter";
   outline: none;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
   text-align: left;
-  padding: 20px;
+  padding: 10px;
 }
 
 .client-list{
   display: grid;
-  width:max-content;
   height: 100%;
   grid-auto-flow: row;
+  gap:20px
 }
 
 .loader {

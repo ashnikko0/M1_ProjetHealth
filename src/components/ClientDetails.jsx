@@ -9,6 +9,8 @@ import "./ClientDetails.css";
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import back from "../assets/back.svg";
+import trophy from "../assets/trophy.png";
+
 
 function ClientDetails() {
 
@@ -92,7 +94,7 @@ function ClientDetails() {
   return (
     <div>
 
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='sexIcon'/></button>
       <h1>{client.firstname} {client.lastname}</h1>
 
       <div className="embla__controls">
