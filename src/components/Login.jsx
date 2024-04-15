@@ -44,16 +44,22 @@ function Login() {
   return (
     
     <>
-    
-    <img src={logo} alt="Logo" className="logo" />
+    <div class="titlefit">
+      <span class="titlebarre"></span>
+      <div class="fitready">Fit'Ready</div>
+      <span class="titlebarre"></span>
+    </div>
+ 
 
+    <img src={logo} alt="Logo" className="logo" />
     <h1>Connexion</h1>
+    
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
-      {authError === "timeout" && <div>Session expirée, veuillez vous reconnecter.</div>}
-      {authError === "login" && <div>Page inaccessible, veuillez vous reconnecter.</div>}
-      {isError && <div>Email ou mot de passe incorrect.</div>}
+      {authError === "timeout" && <div><p>Session expirée, veuillez vous reconnecter.</p></div>}
+      {authError === "login" && <div><p>Page inaccessible, veuillez vous reconnecter.</p></div>}
+      {isError && <div><p>Email ou mot de passe incorrect.</p></div>}
 
       <div>
         <label>
