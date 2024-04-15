@@ -6,6 +6,7 @@ import axios from "axios";
 
 import "../index.css";
 import logo from "../assets/logo.png";
+import login from "../assets/login.svg";
 
 function Login() {
   
@@ -56,20 +57,18 @@ function Login() {
 
       <div>
         <label>
-          <p>Adresse mail</p>
-          <input className="inputSaisie" {...register("email")} />
+          <input className="inputSaisie" placeholder="Adresse mail" {...register("email")} />
         </label>
       </div>
       
       <div>
         <label>
-        <p>Mot de passe</p>
-          <input className="inputSaisie" type="password" {...register("password")} />
+          <input className="inputSaisie" placeholder="Mot de passe" type="password" {...register("password")} />
         </label>
       </div>
 
       <div>
-        <input type="submit" value="Connexion"></input>
+        <input className="loginSubmit" type="image" src={login} alt="Connexion"></input>
       </div>
       
     </form>
