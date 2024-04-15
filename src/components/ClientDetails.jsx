@@ -15,9 +15,15 @@ import back from "../assets/back.svg";
 function ClientDetails() {
 
   const { id } = useParams(); // Récupérer l'ID du client depuis l'URL
+
   const [physioData, setPhysioData] = useState(null); // État pour stocker les détails du client
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isPhysioLoading, setisPhysioLoading] = useState(false);
+  const [isPhysioError, setisPhysioError] = useState(false);
+
+  const [activityData, setActivityData] = useState(null); // État pour stocker les détails du client
+  const [isActivityLoading, setisActivityLoading] = useState(false);
+  const [isActivityError, setisActivityError] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,33 +45,60 @@ function ClientDetails() {
 
       try {
 
-        setIsLoading(true);
-        setIsError(false);
+        setisPhysioLoading(true);
+        setisPhysioError(false);
 
         const response = await axios.get(api);
 
         const data = await response.data.data;
 
         setPhysioData(data);
-        setIsLoading(false);
-        setIsError(false);
+        setisPhysioLoading(false);
+        setisPhysioError(false);
 
       } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
+        setisPhysioError(true);
+        setisPhysioLoading(false);
+      }
+    }
+
+    async function loadActivityData() {
+
+      const api = "https://health.shrp.dev/items/physicalActivities?filter[people_id][_eq]=" + id;
+
+      try {
+
+        setisActivityLoading(true);
+        setisActivityError(false);
+
+        const response = await axios.get(api);
+
+        const data = await response.data.data;
+
+        setActivityData(data);
+        setisActivityLoading(false);
+        setisActivityError(false);
+
+      } catch (error) {
+        setisActivityError(true);
+        setisActivityLoading(false);
       }
     }
 
     loadPhysioData();
+    loadActivityData();
 
   }, []);
 
   // Si les détails du client sont en cours de chargement, afficher un indicateur de chargement
   return (
     <div>
+
       <button onClick={() => navigate(-1)}>Back</button>
       <h1>{client.firstname} {client.lastname}</h1>
+
       <Slider {...slider_settings} className='slider'>
+
         <div className='slide'>
           <h3>Détails</h3>
           {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
@@ -77,10 +110,11 @@ function ClientDetails() {
           <p>Objectif poids : {client.weightGoal}</p>
           <p>Type de profil : {client.activityProfile}</p>
         </div>
+
         <div className='slide'>
           <h3>Données physiologiques</h3>
-          {isLoading && <div className="loader"/>}
-          {isError && <p>Une erreur s'est produite</p>}
+          {isPhysioLoading && <div className="loader"/>}
+          {isPhysioError && <p>Une erreur s'est produite</p>}
           {physioData && 
             <ResponsiveContainer width="100%" height={200} >
               <LineChart data={physioData}>
@@ -92,11 +126,18 @@ function ClientDetails() {
               </LineChart>
             </ResponsiveContainer>}
         </div>
+
         <div className='slide'>
           <h3>Activités Physiques</h3>
-          TODO
+          {isActivityLoading && <div className="loader"/>}
+          {isActivityError && <p>Une erreur s'est produite</p>}
+          {activityData && activityData.map((activity) => (
+            <div key={activity.id}>{activity.type}</div>
+          ))}
         </div>
+
       </Slider>
+
     </div>
   );
 }
