@@ -14,7 +14,7 @@ import trophy from "../assets/trophy.png";
 
 function ClientDetails() {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const {
     prevBtnDisabled,
