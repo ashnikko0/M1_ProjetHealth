@@ -71,7 +71,7 @@ p {
   display: inline-block;
   border-radius: 5px;
   margin-bottom: 5px;
-  color: #213547;
+  color:#ffffff;
 }
 
 /* Style pour les barres */
@@ -79,7 +79,7 @@ p {
   display: inline-block; 
   width: 30px; 
   height: 2px; 
-  background-color:#213547; 
+  background-color:#ffffff; 
   margin: 0 10px;
   vertical-align: middle;
   
