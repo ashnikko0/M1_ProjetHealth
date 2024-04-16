@@ -4,6 +4,7 @@ import trophy from "../assets/trophy.png";
 import ruler from "../assets/ruler.svg";
 import goal from "../assets/goal.svg";
 import current from "../assets/current.svg";
+import profilepic from "../assets/profilepic.svg"
 import { Link, useNavigate } from 'react-router-dom';
 
 function ClientCard({ client }) {
@@ -15,11 +16,11 @@ function ClientCard({ client }) {
     <div className="client-card" onClick={() => navigate('/client/' + client.id, {state:{client}})}>
         
         <div className="name-card">
+        <img src={profilepic} alt="ProfilePic" className="icon" />
         {client.firstname} {client.lastname}
         </div>
-
+       
         <div className="content-card">
-
           <div className="inside-card">
             <img src={ruler} alt="Ruler" className="icon" />
             <p>{client.height}</p>
