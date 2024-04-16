@@ -39,10 +39,9 @@ function PrivateRoute({ children }) {
   }
 
   return <>
-    <OverlayProfile></OverlayProfile>
 
     <div>
-      {JSON.parse(localStorage.getItem("user_data")).email + " est connecté"}
+      {/* {JSON.parse(localStorage.getItem("user_data")).email + " est connecté"} */}
       <button onClick={() => { 
         localStorage.removeItem("user_data");
         navigate("/");

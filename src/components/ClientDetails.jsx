@@ -121,10 +121,11 @@ function ClientDetails() {
             <p>Année de naissance : {client.birthyear }</p>
             <p>Taille : {client.height}</p>
             <p>IMC de départ : {client.bmiStart}</p>
-            <p>objectif IMC : {client.bmiGoal}</p>
+            <p>Objectif IMC : {client.bmiGoal}</p>
             <p>Poids de départ : {client.weightStart}</p>
             <p>Objectif poids : {client.weightGoal}</p>
-            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="icon"></img> : <p></p>}
+            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
+            {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
             <p>Type de profil : {client.activityProfile}</p>
           </div>
 
