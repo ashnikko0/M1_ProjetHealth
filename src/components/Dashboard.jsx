@@ -18,7 +18,6 @@ function Dashboard() {
             <ClientList searchQuery={keyword} />
         </div>
     )
-/*TODO faire que la recherche est lancé via une requete à l'API, on cherche le nom OU le prénom */
 }
 
 export default Dashboard;

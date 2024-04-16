@@ -6,6 +6,7 @@ import axios from 'axios';
 import Login from './components/Login.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import ClientDetails from './components/ClientDetails.jsx';
+import OverlayProfile from './components/OverlayProfile.jsx';
 
 function PrivateRoute({ children }) {
 
@@ -38,6 +39,8 @@ function PrivateRoute({ children }) {
   }
 
   return <>
+    <OverlayProfile></OverlayProfile>
+
     <div>
       {JSON.parse(localStorage.getItem("user_data")).email + " est connecté"}
       <button onClick={() => { 
