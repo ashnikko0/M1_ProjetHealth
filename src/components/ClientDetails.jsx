@@ -101,16 +101,14 @@ function ClientDetails() {
 
   // Si les détails du client sont en cours de chargement, afficher un indicateur de chargement
   return (
-    <div>
+    <div className='client-details'>
 
       <button onClick={() => navigate(-1)}><img src={back} alt="back"className='icon'/></button>
       <h1>{client.firstname} {client.lastname}</h1>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
+      <div className="embla__buttons">
+        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
 
       <div className="embla" ref={emblaRef}>  
