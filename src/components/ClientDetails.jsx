@@ -79,11 +79,9 @@ function ClientDetails() {
         const data = await response.data.data;
 
         var sum = 0;
-        if(typeof data == 'object'){
-            data.forEach(activity => {
-                sum += parseFloat(activity.consumedCalories);
-            });
-        }
+        data.forEach(activity => {
+            sum += parseFloat(activity.consumedCalories);
+        });
         setCaloriesData(sum);
 
         setActivityData(data);
@@ -103,16 +101,14 @@ function ClientDetails() {
 
   // Si les détails du client sont en cours de chargement, afficher un indicateur de chargement
   return (
-    <div>
+    <div className='client-details'>
 
       <button onClick={() => navigate(-1)}><img src={back} alt="back"className='icon'/></button>
       <h1>{client.firstname} {client.lastname}</h1>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
+      <div className="embla__buttons">
+        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
 
       <div className="embla" ref={emblaRef}>  
@@ -154,6 +150,14 @@ function ClientDetails() {
             {isActivityError && <p>Une erreur s'est produite</p>}
             {activityData && <>
               <p>{caloriesData}</p>
+              <ResponsiveContainer width="100%" height={200} >
+                <LineChart data={activityData}>
+                  <XAxis dataKey="date"/>
+                  <YAxis domain={['dataMin - 1', 'dataMax + 1']}/>
+                  <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                  <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
+                </LineChart>
+              </ResponsiveContainer>
               {activityData.slice(0, 10).map((activity) => ( // "Voir plus" ?
                 <ActivityCard key={activity.id} activity={activity}/>
               ))
