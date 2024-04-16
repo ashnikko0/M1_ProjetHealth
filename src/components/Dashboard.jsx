@@ -3,6 +3,7 @@ import "../index.css";
 import ClientList from "./ClientList.jsx";
 import SearchBar from "./SearchBar.jsx"
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 function Dashboard() {
 
@@ -13,10 +14,20 @@ function Dashboard() {
     }
       
     return (
-        <div>
-            <SearchBar keyword={keyword} onChange={updateKeyword} />
-            <ClientList searchQuery={keyword} />
-        </div>
+        <>
+        
+        
+        <div className="titlefit">
+            <span className="titlebarre"></span>
+            <div className="fitready">Fit'Ready</div>
+            <span className="titlebarre"></span>
+        </div><img src={logo} alt="Logo" className="logodash" /><div>
+                <SearchBar keyword={keyword} onChange={updateKeyword} />
+                <ClientList searchQuery={keyword} />
+            </div>
+            
+            
+            </>
     )
 }
 
