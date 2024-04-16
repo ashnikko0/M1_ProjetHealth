@@ -56,9 +56,11 @@ function Login() {
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
-      {authError === "timeout" && <div><p>Session expirée, veuillez vous reconnecter.</p></div>}
-      {authError === "login" && <div><p>Page inaccessible, veuillez vous reconnecter.</p></div>}
-      {isError && <div><p>Email ou mot de passe incorrect.</p></div>}
+      <p className="error-p">
+        {authError === "timeout" && <>Session expirée, veuillez vous reconnecter.</>}
+        {authError === "login" && <>Page inaccessible, veuillez vous reconnecter.</>}
+        {isError && <>Email ou mot de passe incorrect</>}
+      </p>
 
       <div>
         <label>
