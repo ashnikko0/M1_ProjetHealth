@@ -116,7 +116,7 @@ function ClientDetails() {
         <div className="embla__container">
 
           <div className="embla__slide">
-            <h2>Détails</h2>
+            <div className='details-title-section'>Détails</div>
             {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon"/> : <img src={femaleIcon} alt="femaleIcon" className="icon"/>}
             <p>Année de naissance : {client.birthyear }</p>
             <p>Taille : {client.height}</p>
@@ -129,7 +129,7 @@ function ClientDetails() {
           </div>
 
           <div className="embla__slide">
-            <h2>Données physiologiques</h2>
+            <div className='details-title-section'>Données physiologiques</div>
             {isPhysioLoading && <div className="loader"/>}
             {isPhysioError && <p>Une erreur s'est produite</p>}
             {physioData && 
@@ -145,7 +145,7 @@ function ClientDetails() {
           </div>
 
           <div className="embla__slide">
-            <h2>Activités Physiques</h2>
+            <div className='details-title-section'>Activités Physiques</div>
             {isActivityLoading && <div className="loader"/>}
             {isActivityError && <p>Une erreur s'est produite</p>}
             {activityData && <>

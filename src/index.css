@@ -274,6 +274,12 @@ button:focus-visible {
     align-items: center;
   }
 
+  .details-title-section{
+    font-size: 25px;
+    font-family: "Oswald";
+    text-align: center;
+  }
+
   .overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */

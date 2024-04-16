@@ -3,18 +3,19 @@
   }
 
 .embla__container {
-    display: flex;
+display: flex;
 }
 
 .embla__slide {
-    flex: 0 0 100%;
+flex: 0 0 100%;
+min-width: 0;
 }
 
 .embla__buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    grid-auto-flow: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .embla__button {
