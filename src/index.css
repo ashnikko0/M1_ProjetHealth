@@ -94,6 +94,15 @@ p {
   color: #000; 
 }
 
+
+.titlefitdash {
+  display: inline-block; 
+  font-size: 24px; 
+  color: #000; 
+  align-content: center;
+
+}
+
 .inputSaisie{   
   width: 180px;
   border: 1px solid rgb(105, 105, 105);
@@ -145,6 +154,11 @@ body {
   height: 200px;
   padding-top:1px;
   padding-bottom: 5px;
+}
+
+.logodash{
+  height: 110px;
+  align-items:end;
 }
 
 button {

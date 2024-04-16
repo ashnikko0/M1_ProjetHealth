@@ -23,16 +23,17 @@ function ClientCard({ client }) {
         <div className="content-card">
           <div className="inside-card">
             <img src={ruler} alt="Ruler" className="icon" />
-            <p>{client.height}</p>
+            <p>{Math.floor(client.height/100)}.{client.height%100} m</p>
           </div>
         
-        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon"/> : <img src={femaleIcon} alt="femaleIcon" className="icon"/>}
+        {client.sex === 1 ? <div className="inside-card"><img src={maleIcon} alt="maleIcon" className="icon"/>Male</div>
+                          : <div className="inside-card"><img src={femaleIcon} alt="femaleIcon" className="icon"/>Female</div>}
         </div>
         
         <div className="content-card">
           <div className="inside-card">
           <img src={current} alt="CurrentWeight" className="icon" />
-          <p>{client.weightStart}</p>
+          <p>{client.weightStart} kg</p>
         
         </div>
 
@@ -40,7 +41,7 @@ function ClientCard({ client }) {
         
         <div className="inside-card">
           <img src={goal} alt="GoalWeight" className="icon  " />
-          <p> {client.weightGoal}</p> 
+          <p> {client.weightGoal} kg</p> 
         </div>
         
         </div>
