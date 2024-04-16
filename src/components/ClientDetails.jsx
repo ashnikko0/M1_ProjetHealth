@@ -4,6 +4,8 @@ import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, Responsive
 import axios from 'axios';
 import useEmblaCarousel from 'embla-carousel-react'
 
+import ActivityCard from './ActivityCard';
+
 import "./ClientDetails.css";
 
 import maleIcon from "../assets/maleIcon.svg";
@@ -30,6 +32,7 @@ function ClientDetails() {
   const [isPhysioError, setisPhysioError] = useState(false);
 
   const [activityData, setActivityData] = useState(null); // État pour stocker les détails du client
+  const [caloriesData, setCaloriesData] = useState(null);
   const [isActivityLoading, setisActivityLoading] = useState(false);
   const [isActivityError, setisActivityError] = useState(false);
 
@@ -64,7 +67,7 @@ function ClientDetails() {
 
     async function loadActivityData() {
 
-      const api = "https://health.shrp.dev/items/physicalActivities?filter[people_id][_eq]=" + id;
+      const api = "https://health.shrp.dev/items/physicalActivities?sort=-date&filter[people_id][_eq]=" + id;
 
       try {
 
@@ -74,6 +77,14 @@ function ClientDetails() {
         const response = await axios.get(api);
 
         const data = await response.data.data;
+
+        var sum = 0;
+        if(typeof data == 'object'){
+            data.forEach(activity => {
+                sum += parseFloat(activity.consumedCalories);
+            });
+        }
+        setCaloriesData(sum);
 
         setActivityData(data);
         setisActivityLoading(false);
@@ -141,9 +152,13 @@ function ClientDetails() {
             <h2>Activités Physiques</h2>
             {isActivityLoading && <div className="loader"/>}
             {isActivityError && <p>Une erreur s'est produite</p>}
-            {activityData && activityData.map((activity) => (
-              <div key={activity.id}>{activity.type}</div>
-            ))}
+            {activityData && <>
+              <p>{caloriesData}</p>
+              {activityData.slice(0, 10).map((activity) => ( // "Voir plus" ?
+                <ActivityCard key={activity.id} activity={activity}/>
+              ))
+            }
+            </>}
           </div>
 
         </div>

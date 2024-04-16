@@ -48,7 +48,6 @@ function Login() {
       <div className="fitready">Fit'Ready</div>
       <span className="titlebarre"></span>
     </div>
- 
 
     <img src={logo} alt="Logo" className="logo" />
     <h1>Connexion</h1>
@@ -58,8 +57,8 @@ function Login() {
 
       <p className="error-p">
         {authError === "timeout" && <>Session expirée, veuillez vous reconnecter.</>}
-        {authError === "login" && <>Page inaccessible, veuillez vous reconnecter.</>}
-        {isError && <>Email ou mot de passe incorrect</>}
+        {authError === "login" && <>Page inaccessible, veuillez vous connecter.</>}
+        {isError && <>Email ou mot de passe incorrect.</>}
       </p>
 
       <div>
