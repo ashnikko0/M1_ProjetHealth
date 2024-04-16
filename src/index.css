@@ -60,6 +60,10 @@ p {
   font-size: 16px;
 }
 
+.error-p:empty::before {
+  content: "\A0";
+}
+
 .fitready{
   line-height: 1.1;
   font-family: "Oswald";
