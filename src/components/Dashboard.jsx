@@ -2,16 +2,20 @@ import "../index.css";
 
 import ClientList from "./ClientList.jsx";
 import SearchBar from "./SearchBar.jsx"
-import { useParams } from 'react-router-dom';
+import { useState } from "react";
 
 function Dashboard() {
 
-    const { searchQuery } = useParams();
+    const [keyword, setKeyword] = useState([]);
+
+    const updateKeyword = (keyword) => {
+        setKeyword(keyword);
+    }
       
     return (
         <div>
-            <SearchBar />
-            <ClientList searchQuery={searchQuery} />
+            <SearchBar keyword={keyword} onChange={updateKeyword} />
+            <ClientList searchQuery={keyword} />
         </div>
     )
 /*TODO faire que la recherche est lancé via une requete à l'API, on cherche le nom OU le prénom */

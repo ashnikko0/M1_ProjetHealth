@@ -63,10 +63,6 @@ function App() {
           <PrivateRoute>
             <Dashboard />
           </PrivateRoute>}/>
-        <Route path="/dashboard/:searchQuery" element={
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>}/>
         <Route path="/client/:id" element={
           <PrivateRoute>
             <ClientDetails />

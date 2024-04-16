@@ -6,6 +6,7 @@ import ClientCard from './ClientCard';
 function ClientList({ searchQuery }) {
 
   const [clients, setClients] = useState([]);
+  const [filteredClients, setFilteredClients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
    
@@ -31,6 +32,7 @@ function ClientList({ searchQuery }) {
 
 
         setClients(data);
+        setFilteredClients(data);
         setIsLoading(false);
         setIsError(false);
 
@@ -44,11 +46,17 @@ function ClientList({ searchQuery }) {
 
   }, []);
 
+  useEffect(() => {
+    setFilteredClients(clients.filter(client => {
+      return `${client.firstname.toLowerCase()} ${client.lastname.toLowerCase()}`.includes(searchQuery);
+    }));
+  }, [searchQuery])
+
   return (
     <div className="client-list">
       {isLoading && <div className="loader"/>}
       {isError && <p>Une erreur s'est produite</p>}
-      {clients.map((client) => (
+      {filteredClients.map((client) => (
         <ClientCard key={client.id} client={client}/>
       ))}
     </div>
