@@ -4,6 +4,7 @@
 
 .embla__container {
 display: flex;
+width: 360px;
 }
 
 .embla__slide {

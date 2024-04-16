@@ -12,22 +12,24 @@ function Dashboard() {
     const updateKeyword = (keyword) => {
         setKeyword(keyword);
     }
-      
+
     return (
         <>
-        
-        
-        <div className="titlefit">
-            <span className="titlebarre"></span>
-            <div className="fitready">Fit'Ready</div>
-            <span className="titlebarre"></span>
-        </div><img src={logo} alt="Logo" className="logodash" /><div>
+            <div className="titlefit">
+                <span className="titlebarre"></span>
+                <div className="fitready">Fit'Ready</div>
+                <span className="titlebarre"></span>
+            </div>
+            
+            <img src={logo} alt="Logo" className="logodash" />
+
+            <div>
                 <SearchBar keyword={keyword} onChange={updateKeyword} />
                 <ClientList searchQuery={keyword} />
             </div>
-            
-            
-            </>
+
+
+        </>
     )
 }
 

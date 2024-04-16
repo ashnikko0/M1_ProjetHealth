@@ -40,8 +40,8 @@ function PrivateRoute({ children }) {
 
   return <>
 
-    <div>
-      {/* {JSON.parse(localStorage.getItem("user_data")).email + " est connecté"} */}
+    <div className='logout-button'>
+      {JSON.parse(localStorage.getItem("user_data")).email + " est connecté"}
       <button onClick={() => { 
         localStorage.removeItem("user_data");
         navigate("/");

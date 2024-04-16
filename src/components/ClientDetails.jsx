@@ -80,7 +80,7 @@ function ClientDetails() {
 
         var sum = 0;
         data.forEach(activity => {
-            sum += parseFloat(activity.consumedCalories);
+          sum += parseFloat(activity.consumedCalories);
         });
         setCaloriesData(sum);
 
@@ -103,7 +103,10 @@ function ClientDetails() {
   return (
     <div className='client-details'>
 
-      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='icon'/></button>
+      <div className='back-menu'>
+        <button onClick={() => navigate(-1)}><img src={back} alt="back" className='icon' /></button>
+      </div>
+
       <h1>{client.firstname} {client.lastname}</h1>
 
       <div className="embla__buttons">
@@ -111,34 +114,34 @@ function ClientDetails() {
         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
 
-      <div className="embla" ref={emblaRef}>  
-        
+      <div className="embla" ref={emblaRef}>
+
         <div className="embla__container">
 
           <div className="embla__slide">
             <div className='details-title-section'>Détails</div>
-            {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon"/> : <img src={femaleIcon} alt="femaleIcon" className="icon"/>}
-            <p>Année de naissance : {client.birthyear }</p>
+            {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}
+            <p>Année de naissance : {client.birthyear}</p>
             <p>Taille : {client.height}</p>
             <p>IMC de départ : {client.bmiStart}</p>
             <p>Objectif IMC : {client.bmiGoal}</p>
             <p>Poids de départ : {client.weightStart}</p>
             <p>Objectif poids : {client.weightGoal}</p>
-            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
+            {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
             {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
             <p>Type de profil : {client.activityProfile}</p>
           </div>
 
           <div className="embla__slide">
             <div className='details-title-section'>Données physiologiques</div>
-            {isPhysioLoading && <div className="loader"/>}
+            {isPhysioLoading && <div className="loader" />}
             {isPhysioError && <p>Une erreur s'est produite</p>}
-            {physioData && 
+            {physioData &&
               <ResponsiveContainer width="100%" height={200} >
                 <LineChart data={physioData}>
-                  <XAxis dataKey="date"/>
-                  <YAxis domain={['dataMin - 1', 'dataMax + 1']}/>
-                  <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                  <XAxis dataKey="date" />
+                  <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
+                  <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
                   <Line type="monotone" dataKey="weight" stroke="#8884d8" />
                   <ReferenceLine y={client.weightGoal} label="Goal" stroke="#82ca9d" />
                 </LineChart>
@@ -147,22 +150,22 @@ function ClientDetails() {
 
           <div className="embla__slide">
             <div className='details-title-section'>Activités Physiques</div>
-            {isActivityLoading && <div className="loader"/>}
+            {isActivityLoading && <div className="loader" />}
             {isActivityError && <p>Une erreur s'est produite</p>}
             {activityData && <>
               <p>{caloriesData}</p>
               <ResponsiveContainer width="100%" height={200} >
                 <LineChart data={activityData}>
-                  <XAxis dataKey="date"/>
-                  <YAxis domain={['dataMin - 1', 'dataMax + 1']}/>
-                  <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                  <XAxis dataKey="date" />
+                  <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
+                  <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
                   <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
                 </LineChart>
               </ResponsiveContainer>
               {activityData.slice(0, 10).map((activity) => ( // "Voir plus" ?
-                <ActivityCard key={activity.id} activity={activity}/>
+                <ActivityCard key={activity.id} activity={activity} />
               ))
-            }
+              }
             </>}
           </div>
 
