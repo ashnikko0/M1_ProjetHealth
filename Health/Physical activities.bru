@@ -1,0 +1,16 @@
+meta {
+  name: Physical activities
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://health.shrp.dev/items/physicalActivities?filter[people_id][_eq]=03267270-c67d-41c2-97f5-daeca0474952&filter[type][_eq]=swimming
+  body: text
+  auth: none
+}
+
+query {
+  filter[people_id][_eq]: 03267270-c67d-41c2-97f5-daeca0474952
+  filter[type][_eq]: swimming
+}

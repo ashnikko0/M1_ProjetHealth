@@ -23,7 +23,7 @@ function ClientCard({ client }) {
         <div className="bottom-part-card">
         <p>Poids de départ : {client.weightStart}</p>
         <p>Objectif poids : {client.weightGoal}</p>
-        {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="sexIcon"></img> : <p>NO</p>}
+        {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="sexIcon"></img> :<span></span>}
         </div>
       
     </div>
