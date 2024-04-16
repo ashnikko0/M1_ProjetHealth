@@ -177,7 +177,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-  .sexIcon{
+  .icon{
     fill: #000000;
     /*marche pas, voir pour que la couleur s'adapte au thème de l'ordi*/
   }

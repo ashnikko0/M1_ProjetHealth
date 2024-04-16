@@ -94,7 +94,7 @@ function ClientDetails() {
   return (
     <div>
 
-      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='sexIcon'/></button>
+      <button onClick={() => navigate(-1)}><img src={back} alt="back"className='icon'/></button>
       <h1>{client.firstname} {client.lastname}</h1>
 
       <div className="embla__controls">
@@ -110,14 +110,14 @@ function ClientDetails() {
 
           <div className="embla__slide">
             <h2>Détails</h2>
-            {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
+            {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon"/> : <img src={femaleIcon} alt="femaleIcon" className="icon"/>}
             <p>Année de naissance : {client.birthyear }</p>
             <p>Taille : {client.height}</p>
             <p>IMC de départ : {client.bmiStart}</p>
             <p>objectif IMC : {client.bmiGoal}</p>
             <p>Poids de départ : {client.weightStart}</p>
             <p>Objectif poids : {client.weightGoal}</p>
-            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="sexIcon"></img> : <p></p>}
+            {client.weightStart === client.weightStart ? <img src={trophy} alt="trophy" className="icon"></img> : <p></p>}
             <p>Type de profil : {client.activityProfile}</p>
           </div>
 

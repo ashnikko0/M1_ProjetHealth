@@ -19,17 +19,17 @@ function ClientCard({ client }) {
         </div>
 
         <div className="mid-part-card">
-        <img src={ruler} alt="Ruler" className="sexIcon" />
+        <img src={ruler} alt="Ruler" className="icon" />
         <p>Taille : {client.height}</p>
-        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
+        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon"/> : <img src={femaleIcon} alt="femaleIcon" className="icon"/>}
         </div>
         
         <div className="bottom-part-card">
         <p>{client.weightStart}</p>
-        <img src={current} alt="CurrentWeight" className="sexIcon" />
-        <img src={goal} alt="GoalWeight" className="sexIcon" />
+        <img src={current} alt="CurrentWeight" className="icon" />
+        <img src={goal} alt="GoalWeight" className="icon" />
         <p> {client.weightGoal}</p> 
-        {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="sexIcon"></img> :<span></span>}
+        {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon"></img> :<span></span>}
         </div>
       
     </div>
