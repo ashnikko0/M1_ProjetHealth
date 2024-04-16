@@ -18,6 +18,7 @@ function ClientCard({ client }) {
         <h2>{client.firstname} {client.lastname}</h2>
         </div>
 
+<<<<<<< HEAD
         <div className="mid-part-card">
         <img src={ruler} alt="Ruler" className="icon" />
         <p>Taille : {client.height}</p>
@@ -30,6 +31,31 @@ function ClientCard({ client }) {
         <img src={goal} alt="GoalWeight" className="icon" />
         <p> {client.weightGoal}</p> 
         {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon"></img> :<span></span>}
+=======
+        <div className="content-card">
+
+          <div className="inside-card">
+            <img src={ruler} alt="Ruler" className="sexIcon" />
+            <p>{client.height}</p>
+          </div>
+        
+        {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="sexIcon"/> : <img src={femaleIcon} alt="femaleIcon" className="sexIcon"/>}
+        </div>
+        
+        <div className="content-card">
+          <div className="inside-card">
+          <img src={current} alt="CurrentWeight" className="sexIcon" />
+          <p>{client.weightStart}</p>
+        
+        </div>
+
+        <div className="inside-card">
+          <img src={goal} alt="GoalWeight" className="sexIcon" />
+          <p> {client.weightGoal}</p> 
+          {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="sexIcon"></img> :<span></span>}
+        </div>
+
+>>>>>>> 84263b18a2d291e1ac9993828b300eae5a297db7
         </div>
       
     </div>
