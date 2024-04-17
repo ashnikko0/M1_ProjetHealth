@@ -339,7 +339,7 @@ button:focus-visible {
     display: grid;
     grid-auto-flow: column;
     justify-items: start;
-    padding-top: 50px;
+    padding-left: 20px;
   }
 
   .logout-button{
@@ -353,7 +353,7 @@ button:focus-visible {
     height: auto;
     font-family: "Inter";
     font-size: 13px;
-    top:0px;
+    top:2px;
   }
 
   .top-band{

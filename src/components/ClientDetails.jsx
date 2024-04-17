@@ -121,7 +121,7 @@ function ClientDetails() {
           <div className="embla__slide">
             <div className='details-title-section'>Détails</div>
             <div className='details-content'>
-            {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}
+            <p>{client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
             <p>Année de naissance : {client.birthyear}</p>
             <p>Taille : {client.height}</p>
             <p>IMC de départ : {client.bmiStart}</p>
@@ -139,7 +139,7 @@ function ClientDetails() {
             {isPhysioLoading && <div className="loader" />}
             {isPhysioError && <p>Une erreur s'est produite</p>}
             {physioData &&
-              <ResponsiveContainer width="100%" height={200} >
+              <ResponsiveContainer width="90%" height={200} >
                 <LineChart data={physioData}>
                   <XAxis dataKey="date" />
                   <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
@@ -156,7 +156,7 @@ function ClientDetails() {
             {isActivityError && <p>Une erreur s'est produite</p>}
             {activityData && <>
               <p>{caloriesData}</p>
-              <ResponsiveContainer width="100%" height={200} >
+              <ResponsiveContainer width="90%" height={200} >
                 <LineChart data={activityData}>
                   <XAxis dataKey="date" />
                   <YAxis domain={['dataMin - 1', 'dataMax + 1']} />

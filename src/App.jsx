@@ -6,7 +6,6 @@ import axios from 'axios';
 import Login from './components/Login.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import ClientDetails from './components/ClientDetails.jsx';
-import OverlayProfile from './components/OverlayProfile.jsx';
 
 function PrivateRoute({ children }) {
 
