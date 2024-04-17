@@ -1,15 +1,17 @@
 .embla {
     overflow: hidden;
-  }
+}
 
 .embla__container {
-display: flex;
-width: 360px;
+    display: flex;
+    width: 360px;
 }
 
 .embla__slide {
-flex: 0 0 100%;
-min-width: 0;
+    flex: 0 0 100%;
+    min-width: 0;
+    width: 360px;
+    padding: 10PX;
 }
 
 .embla__buttons {

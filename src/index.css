@@ -304,6 +304,7 @@ button:focus-visible {
     display: grid;
     grid-auto-flow: column;
     justify-items: start;
+    padding-top: 50px;
   }
 
   .logout-button{
