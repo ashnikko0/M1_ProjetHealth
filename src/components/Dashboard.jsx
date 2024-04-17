@@ -15,12 +15,14 @@ function Dashboard() {
 
     return (
         <>
-            <div className="titlefit">
-                <span className="titlebarre"></span>
-                <div className="fitready">Fit'Ready</div>
-                <span className="titlebarre"></span>
+            <div className="top-band">
+                <div className="titlefit">
+                    <span className="titlebarre"></span>
+                    <div className="fitready">Fit'Ready</div>
+                    <span className="titlebarre"></span>
+                </div>
             </div>
-            
+
             <img src={logo} alt="Logo" className="logodash" />
 
             <div>

@@ -6,11 +6,12 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #312e2e;
 
-  /*mettre des variables biens pour les couleurs*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
+  
+  padding-top: 30px;
 }
 
 @font-face {
@@ -50,6 +51,32 @@ p {
   font-family:"Inter";
   font-size: 16px;
   width: fit-content;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+form{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 .fitready{
@@ -326,4 +353,10 @@ button:focus-visible {
     height: auto;
     font-family: "Inter";
     font-size: 13px;
+    top:0px;
+  }
+
+  .top-band{
+    display: grid;
+    grid-auto-rows: auto;
   }

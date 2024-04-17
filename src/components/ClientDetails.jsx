@@ -120,6 +120,7 @@ function ClientDetails() {
 
           <div className="embla__slide">
             <div className='details-title-section'>Détails</div>
+            <div className='details-content'>
             {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}
             <p>Année de naissance : {client.birthyear}</p>
             <p>Taille : {client.height}</p>
@@ -130,6 +131,7 @@ function ClientDetails() {
             {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
             {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
             <p>Type de profil : {client.activityProfile}</p>
+            </div>
           </div>
 
           <div className="embla__slide">
