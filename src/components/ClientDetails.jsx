@@ -164,6 +164,8 @@ function ClientDetails() {
                   <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
                 </LineChart>
               </ResponsiveContainer>
+
+              <div className='details-title-section'>Historique des activités</div>
               {activityData.slice(0, 10).map((activity) => ( // "Voir plus" ?
                 <ActivityCard key={activity.id} activity={activity} />
               ))

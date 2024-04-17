@@ -360,3 +360,7 @@ button:focus-visible {
     display: grid;
     grid-auto-rows: auto;
   }
+
+  .activity-card{
+    padding: 15px;;
+  }

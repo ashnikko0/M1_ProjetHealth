@@ -1,17 +1,19 @@
-function ActivityCard({ activity }) {
+import { format } from 'date-fns';
 
-  //chaque div de la card aura un style particulier
+
+function ActivityCard({ activity }) {
+  const formattedDate = format(new Date(activity.date), 'dd/MM/yyyy');
+  
   return (
     <div className="activity-card">
-        
-        <h2>{activity.type}</h2>
-        <div>Durée: {activity.duration}</div>
-        <div>Pas: {activity.numberOfSteps}</div>
-        <div>Calories: {activity.consumedCalories}</div>
-        {activity.date}
-      
+      <h2>{activity.type}</h2>
+      <div>
+        <p>Durée : {activity.duration}</p>
+        {activity.numberOfSteps === 0 ? null : <p>Nombre de pas : {activity.numberOfSteps}</p>}
+        <p>Calories : {activity.consumedCalories}</p>
+        <p>Date : {formattedDate}</p>
+      </div>
     </div>
-    
   );
 }
 
