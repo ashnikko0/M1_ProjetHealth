@@ -36,6 +36,8 @@ function ClientDetails() {
   const [isActivityLoading, setisActivityLoading] = useState(false);
   const [isActivityError, setisActivityError] = useState(false);
 
+  const [visibleActivities, setVisibleActivities] = useState(10); // Initial value
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -121,16 +123,16 @@ function ClientDetails() {
           <div className="embla__slide">
             <div className='details-title-section'>Détails</div>
             <div className='details-content'>
-            <p>{client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
-            <p>Année de naissance : {client.birthyear}</p>
-            <p>Taille : {client.height}</p>
-            <p>IMC de départ : {client.bmiStart}</p>
-            <p>Objectif IMC : {client.bmiGoal}</p>
-            <p>Poids de départ : {client.weightStart}</p>
-            <p>Objectif poids : {client.weightGoal}</p>
-            {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
-            {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
-            <p>Type de profil : {client.activityProfile}</p>
+              <p>{client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
+              <p>Année de naissance : {client.birthyear}</p>
+              <p>Taille : {client.height}</p>
+              <p>IMC de départ : {client.bmiStart}</p>
+              <p>Objectif IMC : {client.bmiGoal}</p>
+              <p>Poids de départ : {client.weightStart}</p>
+              <p>Objectif poids : {client.weightGoal}</p>
+              {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
+              {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
+              <p>Type de profil : {client.activityProfile}</p>
             </div>
           </div>
 
@@ -165,11 +167,17 @@ function ClientDetails() {
                 </LineChart>
               </ResponsiveContainer>
 
-              <div className='details-title-section'>Historique des activités</div>
-              {activityData.slice(0, 10).map((activity) => ( // "Voir plus" ?
-                <ActivityCard key={activity.id} activity={activity} />
-              ))
-              }
+              <div>
+                <div className='details-title-section'>Historique des activités</div>
+                {activityData.slice(0, visibleActivities).map((activity) => (
+                  <ActivityCard key={activity.id} activity={activity} />
+                ))}
+                {activityData.length > visibleActivities && (
+                  <button onClick={() => setVisibleActivities(visibleActivities + 10)}>
+                    Voir plus
+                  </button>
+                )}
+              </div>
             </>}
           </div>
 
