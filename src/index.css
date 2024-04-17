@@ -187,6 +187,14 @@ button:focus-visible {
     /*marche pas, voir pour que la couleur s'adapte au thème de l'ordi*/
   }
 }
+.icon{
+  height:20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(103deg) brightness(105%) contrast(105%);
+}
+
+.icon-trophy{
+  height:20px;
+}
 
 .client-card{
   border:1px solid grey;
