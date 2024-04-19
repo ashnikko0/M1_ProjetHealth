@@ -1,6 +1,5 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
-import trophy from "../assets/trophy.png";
 import tropheegold from "../assets/tropheegold.png";
 import tropheesilver from "../assets/tropheesilver.png";
 import tropheebronze from "../assets/tropheebronze.png";

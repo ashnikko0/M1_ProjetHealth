@@ -45,7 +45,7 @@ function PrivateRoute({ children }) {
         localStorage.removeItem("user_data");
         navigate("/");
         }}>
-        Logout
+        Déconnexion
       </button>
     </div>
     {children}
