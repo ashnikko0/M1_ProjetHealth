@@ -1,10 +1,13 @@
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import trophy from "../assets/trophy.png";
+import tropheegold from "../assets/tropheegold.png";
+import tropheesilver from "../assets/tropheesilver.png";
+import tropheebronze from "../assets/tropheebronze.png";
 import ruler from "../assets/ruler.svg";
 import goal from "../assets/goal.svg";
 import current from "../assets/current.svg";
-import profilepic from "../assets/profilepic.svg"
+import profilepic from "../assets/profilepic.svg";
 import { Link, useNavigate } from 'react-router-dom';
 
 function ClientCard({ client }) {
@@ -30,15 +33,23 @@ function ClientCard({ client }) {
                           : <div className="inside-card"><img src={femaleIcon} alt="femaleIcon" className="icon"/>Female</div>}
         </div>
         
-        <div className="content-card">
-          <div className="inside-card">
+      <div className="content-card">
+        <div className="inside-card">
           <img src={current} alt="CurrentWeight" className="icon" />
           <p>{client.weightStart} kg</p>
-        
+
         </div>
 
-        {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> :<span></span>}
-        
+        {client.weightStart === client.weightGoal ? (
+          <img src={tropheegold} alt="Gold Trophy" className="icon-trophy" />
+        ) : client.weightStart - client.weightGoal >= -3 && client.weightStart - client.weightGoal <= 3 ? (
+          <img src={tropheesilver} alt="Silver Trophy" className="icon-trophy" />
+        ) : client.weightStart - client.weightGoal >= -5 && client.weightStart - client.weightGoal <= 5 ? (
+          <img src={tropheebronze} alt="Bronze Trophy" className="icon-trophy" />
+        ) : (
+          <span></span>
+        )}
+
         <div className="inside-card">
           <img src={goal} alt="GoalWeight" className="icon  " />
           <p> {client.weightGoal} kg</p> 
