@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie'
 import axios from "axios";
 
 import "../index.css";
@@ -12,6 +13,7 @@ function Login() {
   const { authError } = useParams();
 
   const [isError, setIsError] = useState(false);
+  const [cookies, setCookie] = useCookies(['user_data'])
   const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
 
@@ -25,12 +27,12 @@ function Login() {
 
         setIsError(false);
 
-        localStorage.setItem("user_data", JSON.stringify({
+        setCookie("user_data", {
           "email": d.email,
           "auth_token": response.data.data.access_token,
           "token_expiration_date": Date.now() + response.data.data.expires,
           "refresh_token": response.data.data.refresh_token,
-        }));
+        }, { path: '/' });
 
         navigate("/dashboard");
       })
