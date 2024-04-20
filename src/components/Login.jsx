@@ -4,7 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie'
 import axios from "axios";
 
-import "../index.css";
 import logo from "../assets/logo.png";
 import login from "../assets/login.svg";
 

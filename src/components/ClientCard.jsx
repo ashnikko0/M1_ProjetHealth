@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import tropheegold from "../assets/tropheegold.png";
@@ -7,7 +9,6 @@ import ruler from "../assets/ruler.svg";
 import goal from "../assets/goal.svg";
 import current from "../assets/current.svg";
 import profilepic from "../assets/profilepic.svg";
-import { Link, useNavigate } from 'react-router-dom';
 
 function ClientCard({ client }) {
 

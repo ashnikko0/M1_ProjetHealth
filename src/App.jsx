@@ -1,4 +1,4 @@
-import './App.css'
+import "./index.css";
 
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie'

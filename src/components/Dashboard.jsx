@@ -1,5 +1,3 @@
-import "../index.css";
-
 import ClientList from "./ClientList.jsx";
 import SearchBar from "./SearchBar.jsx"
 import { useState } from "react";
