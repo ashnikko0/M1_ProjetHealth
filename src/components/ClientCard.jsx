@@ -29,8 +29,8 @@ function ClientCard({ client }) {
             <p>{Math.floor(client.height/100)}.{client.height%100} m</p>
           </div>
         
-        {client.sex === 1 ? <div className="inside-card"><img src={maleIcon} alt="maleIcon" className="icon"/>Male</div>
-                          : <div className="inside-card"><img src={femaleIcon} alt="femaleIcon" className="icon"/>Female</div>}
+        {client.sex === 1 ? <div className="inside-card"><img src={maleIcon} alt="maleIcon" className="icon"/>Homme</div>
+                          : <div className="inside-card"><img src={femaleIcon} alt="femaleIcon" className="icon"/>Femme</div>}
         </div>
         
       <div className="content-card">

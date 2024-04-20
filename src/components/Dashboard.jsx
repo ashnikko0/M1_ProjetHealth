@@ -23,7 +23,7 @@ function Dashboard() {
 
             <img src={logo} alt="Logo" className="logodash" />
 
-            <div>
+            <div className="dashboardDiv">
                 <SearchBar keyword={keyword} onChange={updateKeyword} />
                 <ClientList searchQuery={keyword} />
             </div>

@@ -242,7 +242,7 @@ button:focus-visible {
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
   text-align: left;
   padding: 10px;
-  width: 85%;
+  width: 90%;
 }
 .client-card:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -252,7 +252,7 @@ button:focus-visible {
   display: grid;
   height: 100%;
   grid-auto-flow: row;
-  gap:20px;
+  gap: 10px;
   justify-items: center;
 }
 
@@ -274,6 +274,10 @@ button:focus-visible {
   content: "\A0";
 }
 
+.dashboardDiv {
+  width: 280px;
+}
+
 .search-bar{
   width:100%;
 }
@@ -284,6 +288,7 @@ button:focus-visible {
   border-radius : 30px;
   font-family: "Inter";
   outline: none;
+  text-align: center;
   margin-bottom: 10px;
   padding-left: 10px;
   width: -webkit-fill-available;
@@ -347,6 +352,8 @@ button:focus-visible {
   }
 
   .back-menu{
+    position: relative;
+    padding-top: 15%;
     display: grid;
     grid-auto-flow: column;
     justify-items: start;
@@ -363,7 +370,7 @@ button:focus-visible {
     position: fixed;
     left: 50%;
     transform: translate(-50%, 0);
-    background: #312e2e;
+    background: #3d3b3b;
     width: 80%;
     grid-auto-flow: column;
     align-items: center;
@@ -372,6 +379,9 @@ button:focus-visible {
     font-family: "Inter";
     font-size: 13px;
     top: 1%;
+    border-radius: 8px;
+    border: 1px solid  gray;
+    padding-right: 2%;
   }
 
   .top-band{

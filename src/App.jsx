@@ -13,7 +13,7 @@ function PrivateRoute({ children }) {
   const [cookies, setCookie, removeCookie] = useCookies(['user_data'])
   const navigate = useNavigate();
 
-  if (cookies.user_data === null) {
+  if (cookies.user_data === undefined) {
     return <Navigate to="/login"/>;
   } else if (cookies.user_data.token_expiration_date <= Date.now() + 90000) { // Refresh token if less than 90 seconds
 
@@ -31,7 +31,6 @@ function PrivateRoute({ children }) {
 
       })
       .catch(function (error) {
-        console.log(error)
         removeCookie("user_data", { path: '/' });
         return <Navigate to="/timeout" />;
       });
@@ -41,7 +40,7 @@ function PrivateRoute({ children }) {
   return <>
 
     <div className='logout-button'>
-      {cookies.user_data.email + " est connecté"}
+      {<p>{<b>{cookies.user_data.email}</b>} est connecté</p>}
       <button onClick={() => { 
         removeCookie("user_data");
         navigate("/");
