@@ -333,9 +333,15 @@ button:focus-visible {
   }
 
   .details-title-section{
+    display: grid;
+    width: 50%;
+    height: 50px;
     font-size: 25px;
     font-family: "Oswald";
     text-align: center;
+    align-content: space-evenly;
+    margin: auto;
+    padding-bottom: 25px;
   }
 
   .overlay {
@@ -415,12 +421,15 @@ button:focus-visible {
 }
 
 .embla__slide {
+  position: relative;
   flex: 0 0 100%;
   min-width: 0;
   padding: 15px;
 }
 
 .embla__buttons {
+  position: absolute;
+  width: 91%;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -442,6 +451,14 @@ button:focus-visible {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+}
+
+button.embla__button.embla__button--prev {
+  left: 0px;
+}
+
+button.embla__button.embla__button--next {
+  right: 0px;
 }
 
 .embla__button:disabled {
