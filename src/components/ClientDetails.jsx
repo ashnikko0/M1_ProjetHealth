@@ -13,6 +13,13 @@ import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import back from "../assets/back.svg";
 import trophy from "../assets/trophy.png";
+import tropheegold from "../assets/tropheegold.png";
+import tropheesilver from "../assets/tropheesilver.png";
+import tropheebronze from "../assets/tropheebronze.png";
+import ruler from "../assets/ruler.svg";
+import goal from "../assets/goal.svg";
+import current from "../assets/current.svg";
+import profilepic from "../assets/profilepic.svg";
 
 function ClientDetails() {
 
@@ -128,16 +135,68 @@ function ClientDetails() {
           <div className="embla__slide">
             <div className='details-title-section'>Détails du patient</div>
             <div className='details-content'>
-              <p>Sexe : {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
-              <p>Année de naissance : {client.birthyear}</p>
-              <p>Taille : {client.height}</p>
-              <p>IMC* de départ : {client.bmiStart}</p>
-              <p>Objectif IMC* : {client.bmiGoal}</p>
-              <p>Poids de départ : {client.weightStart}</p>
-              <p>Objectif poids : {client.weightGoal}</p>
-              {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
-              {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
-              <p>Type de profil : {client.activityProfile}</p>
+
+
+
+
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={client.sex === 1 ? maleIcon : femaleIcon} alt="SexIcon" className="icon" />
+                </div>
+                <p>Sexe : {client.sex === 1 ? 'Homme' : 'Femme'}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={profilepic} alt="profilepic" className="icon" />
+                </div>
+                <p>Année de naissance : {client.birthyear}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={ruler} alt="Height" className="icon" />
+                </div>
+                <p>Taille : {client.height}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={current} alt="current" className="icon" />
+                </div>
+                <p>IMC* de départ : {client.bmiStart}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={goal} alt="goal.svg" className="icon" />
+                </div>
+                <p>Objectif IMC* : {client.bmiGoal}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  <img src={current} alt="current.svg" className="icon" />
+                </div>
+                <p>Poids de départ : {client.weightStart}</p>
+              </div>
+              <div className="inside-card-details">
+                <div className="icon-container">
+                  {client.weightStart === client.weightGoal ? (
+                    <img src={tropheegold} alt="TropheeGold" className="icon-trophy" />
+                  ) : client.weightStart - client.weightGoal >= -3 && client.weightStart - client.weightGoal <= 3 ? (
+                    <img src={tropheesilver} alt="TropheeSilver" className="icon-trophy" />
+                  ) : client.weightStart - client.weightGoal >= -5 && client.weightStart - client.weightGoal <= 5 ? (
+                    <img src={tropheebronze} alt="TropheeBronze" className="icon-trophy" />
+                  ) : (
+                    <span></span>
+                  )}
+                </div>
+                <p>Objectif poids : {client.weightGoal}</p>
+              </div>
+
+
+    <div className="inside-card-details">
+    <div className="icon-container">
+      <img src={profilepic} alt="ActivityProfileIcon" className="icon" />
+    </div>
+      <p>Type de profil : {client.activityProfile}</p>
+    </div>
 
               
             </div>

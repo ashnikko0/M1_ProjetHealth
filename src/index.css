@@ -479,3 +479,20 @@ button.embla__button.embla__button--next {
   bottom: 25px;
   right: 30px;
 }
+
+.details-content{
+  text-align: left;
+}
+
+.inside-card-details{
+  display:flex;
+  align-items: left;
+  gap:10px;
+  padding-top: 2px;
+}
+
+.icon-container{
+  display: flex;
+  align-items: center; /* Alignement vertical */
+  margin-right: 10px;
+}
