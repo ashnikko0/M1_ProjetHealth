@@ -59,14 +59,16 @@ const ActivitySlide = ({ emblaApi, id }) => {
          {isActivityLoading && <div className="loader" />}
          {isActivityError && <p>Une erreur s'est produite</p>}
          {activityData && <>
-            <ResponsiveContainer width="90%" height={200} >
-               <LineChart data={activityData}>
-                  <XAxis dataKey="date" reversed={true} interval="preserveEnd" />
-                  <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
-                  <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-                  <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
-               </LineChart>
-            </ResponsiveContainer>
+            <div className="recharts-graph">
+               <ResponsiveContainer width="90%" height={200} >
+                  <LineChart data={activityData}>
+                     <XAxis dataKey="date" reversed={true} interval="preserveEnd" />
+                     <YAxis domain={['dataMin - 1', 'dataMax + 1']} label={{ value: "Calories brûlées (en cal)", angle: -90 }}/>
+                     <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                     <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
+                  </LineChart>
+               </ResponsiveContainer>
+            </div>
 
             <div className="activites-history">
                <h3 className='details-title-section activites-history-title'>Historique des activités</h3>

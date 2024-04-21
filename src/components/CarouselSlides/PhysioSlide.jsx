@@ -51,15 +51,17 @@ const PhysioSlide = ({ emblaApi, client, id }) => {
      {isPhysioLoading && <div className="loader" />}
      {isPhysioError && <p>Une erreur s'est produite</p>}
      {physioData &&
-      <ResponsiveContainer width="90%" height={200} >
-        <LineChart data={physioData}>
-         <XAxis dataKey="date" domain={['auto', 'auto']} />
-         <YAxis domain={['auto', 'auto']} label={{ value: "Poids (en kg)", angle: -90, position: "insideLeft" }} />
-         <CartesianGrid stroke="#eee" strokeDasharray="5 5" vertical={false} />
-         <Line type="monotone" dataKey="weight" stroke="#8884d8" />
-         <ReferenceLine y={client.weightGoal} label="Objectif" stroke="#82ca9d" />
-        </LineChart>
-      </ResponsiveContainer>}
+      <div className="recharts-graph">
+        <ResponsiveContainer width="90%" height={200} >
+          <LineChart data={physioData}>
+          <XAxis dataKey="date" domain={['auto', 'auto']} />
+          <YAxis domain={['auto', 'auto']} label={{ value: "Poids (en kg)", angle: -90 }} />
+          <CartesianGrid stroke="#eee" strokeDasharray="5 5" vertical={false} />
+          <Line type="monotone" dataKey="weight" stroke="#8884d8" />
+          <ReferenceLine y={client.weightGoal} label="Objectif" stroke="#82ca9d" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>}
    </>
   )
 }
