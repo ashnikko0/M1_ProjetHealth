@@ -104,7 +104,7 @@ function ClientDetails() {
     <div className='client-details'>
 
       <div className='back-menu'>
-        <button onClick={() => navigate(-1)}><img src={back} alt="back" className='back-icon' /></button>
+        <button onClick={() => navigate(-1)}><img src={back} alt="back" className='back-icon' /> Retour à la liste</button>
       </div>
 
       <h1>{client.firstname} {client.lastname}</h1>
@@ -119,19 +119,23 @@ function ClientDetails() {
         <div className="embla__container">
 
           <div className="embla__slide">
-            <div className='details-title-section'>Détails</div>
+            <div className='details-title-section'>Détails du patient</div>
             <div className='details-content'>
-              <p>{client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
+              <p>Sexe : {client.sex === 1 ? <img src={maleIcon} alt="maleIcon" className="icon" /> : <img src={femaleIcon} alt="femaleIcon" className="icon" />}</p>
               <p>Année de naissance : {client.birthyear}</p>
               <p>Taille : {client.height}</p>
-              <p>IMC de départ : {client.bmiStart}</p>
-              <p>Objectif IMC : {client.bmiGoal}</p>
+              <p>IMC* de départ : {client.bmiStart}</p>
+              <p>Objectif IMC* : {client.bmiGoal}</p>
               <p>Poids de départ : {client.weightStart}</p>
               <p>Objectif poids : {client.weightGoal}</p>
               {client.weightStart === client.weightGoal ? <img src={trophy} alt="trophy" className="icon-trophy"></img> : <p></p>}
               {/* pq pas ajouter une icone si quelqu'un est en "overweight" */}
               <p>Type de profil : {client.activityProfile}</p>
+
+              
             </div>
+            <p>*IMC = Indice de masse corporelle. </p>
+            <p>Calcul : Poids / Taille x Taille</p>
           </div>
 
           <div className="embla__slide">
