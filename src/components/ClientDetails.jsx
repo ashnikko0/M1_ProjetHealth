@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, ResponsiveContainer } from 'recharts';
+import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, ResponsiveContainer, Legend } from 'recharts';
+import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react'
 import axios from 'axios';
 
 import { PrevButton, NextButton, usePrevNextButtons } from './EmblaCarousel';
 import ActivityCard from './ActivityCard';
+import ScrollUp from './ScrollUp';
 
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
@@ -44,7 +46,7 @@ function ClientDetails() {
   useEffect(() => {
     async function loadPhysioData() {
 
-      const api = "https://health.shrp.dev/items/physiologicalData?filter[people_id][_eq]=" + id;
+      const api = "https://health.shrp.dev/items/physiologicalData?sort=date&filter[people_id][_eq]=" + id;
 
       try {
 
@@ -54,6 +56,9 @@ function ClientDetails() {
         const response = await axios.get(api);
 
         const data = await response.data.data;
+        data.forEach(physio => {
+          physio.date = format(new Date(physio.date), 'dd/MM/yyyy');;
+        });
 
         setPhysioData(data);
         setisPhysioLoading(false);
@@ -80,6 +85,7 @@ function ClientDetails() {
 
         var sum = 0;
         data.forEach(activity => {
+          activity.date = format(new Date(activity.date), 'dd/MM/yyyy');;
           sum += parseFloat(activity.consumedCalories);
         });
         setCaloriesData(sum);
@@ -94,6 +100,7 @@ function ClientDetails() {
       }
     }
 
+    window.scrollTo(0, 0);
     loadPhysioData();
     loadActivityData();
 
@@ -139,17 +146,17 @@ function ClientDetails() {
           </div>
 
           <div className="embla__slide">
-            <div className='details-title-section'>Données physiologiques</div>
+            <div className='details-title-section'>Données Physiologiques</div>
             {isPhysioLoading && <div className="loader" />}
             {isPhysioError && <p>Une erreur s'est produite</p>}
             {physioData &&
               <ResponsiveContainer width="90%" height={200} >
                 <LineChart data={physioData}>
-                  <XAxis dataKey="date" />
-                  <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
-                  <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                  <XAxis dataKey="date" domain={['auto', 'auto']}/>
+                  <YAxis domain={['auto', 'auto']} label={{ value: "Poids (en kg)", angle: -90, position: "insideLeft" }}/>
+                  <CartesianGrid stroke="#eee" strokeDasharray="5 5" vertical={false}/>
                   <Line type="monotone" dataKey="weight" stroke="#8884d8" />
-                  <ReferenceLine y={client.weightGoal} label="Goal" stroke="#82ca9d" />
+                  <ReferenceLine y={client.weightGoal} label="Objectif" stroke="#82ca9d"/>
                 </LineChart>
               </ResponsiveContainer>}
           </div>
@@ -162,7 +169,7 @@ function ClientDetails() {
               <p>{caloriesData}</p>
               <ResponsiveContainer width="90%" height={200} >
                 <LineChart data={activityData}>
-                  <XAxis dataKey="date" />
+                  <XAxis dataKey="date" reversed={true} interval="preserveEnd" />
                   <YAxis domain={['dataMin - 1', 'dataMax + 1']} />
                   <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
                   <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
@@ -185,6 +192,8 @@ function ClientDetails() {
 
         </div>
       </div>
+
+      <ScrollUp />
 
     </div>
   );

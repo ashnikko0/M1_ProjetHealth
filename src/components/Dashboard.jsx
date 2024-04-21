@@ -1,11 +1,17 @@
+import { useState, useEffect } from "react";
+import logo from "../assets/logo.png";
+
 import ClientList from "./ClientList.jsx";
 import SearchBar from "./SearchBar.jsx"
-import { useState } from "react";
-import logo from "../assets/logo.png";
+import ScrollUp from "./ScrollUp.jsx";
 
 function Dashboard() {
 
     const [keyword, setKeyword] = useState([]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     const updateKeyword = (keyword) => {
         setKeyword(keyword);
@@ -13,6 +19,7 @@ function Dashboard() {
 
     return (
         <>
+
             <div className="top-band">
                 <div className="titlefit">
                     <span className="titlebarre"></span>
@@ -28,6 +35,7 @@ function Dashboard() {
                 <ClientList searchQuery={keyword} />
             </div>
 
+            <ScrollUp />
 
         </>
     )

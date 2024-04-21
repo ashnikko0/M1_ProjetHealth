@@ -24,11 +24,11 @@
 
 @font-face {
   font-family: 'Oswald';
-  src: url('src/assets/fonts/Oswald.ttf') format('truetype');
+  src: url('./assets/fonts/Oswald.ttf') format('truetype');
 }
 @font-face {
   font-family: "Inter";
-  src: url('src/assets/fonts/Inter.ttf') format('truetype');
+  src: url('./assets/fonts/Inter.ttf') format('truetype');
 }
 
 
@@ -352,7 +352,6 @@ button:focus-visible {
   }
 
   .back-menu{
-    position: relative;
     padding-top: 15%;
     display: grid;
     grid-auto-flow:column;
@@ -456,4 +455,10 @@ button:focus-visible {
 
 .details-content{
   padding: 15px;
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
 }

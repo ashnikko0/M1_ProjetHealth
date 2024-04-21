@@ -15,11 +15,7 @@ function ClientList({ searchQuery }) {
 
       let api = "";
 
-      if (searchQuery === undefined) {
-        api = "https://health.shrp.dev/items/people";
-      } else {
-        api = "https://health.shrp.dev/items/people?search=" + searchQuery;
-      }
+      api = "https://health.shrp.dev/items/people";
 
       try {
 
@@ -29,7 +25,6 @@ function ClientList({ searchQuery }) {
         const response = await axios.get(api);
 
         const data = await response.data.data;
-
 
         setClients(data);
         setFilteredClients(data);
