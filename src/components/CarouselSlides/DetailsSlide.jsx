@@ -11,23 +11,23 @@ import profilepic from "../../assets/profilepic.svg";
 
 function translateBmi(bmi) { //Pour faire la trad des bmi
    const translations = {
-      "underweight": "sous-poids",
-      "normal": "normal",
-      "overweight": "surpoids",
-      "moderate obesity": "obésité modéré",
-      "severe obesity": "obésité sévère",
-      "morbid obesity": "obésité morbide"
+      "underweight": "Sous-poids",
+      "normal": "Normal",
+      "overweight": "Surpoids",
+      "moderate obesity": "Obésité modéré",
+      "severe obesity": "Obésité sévère",
+      "morbid obesity": "Obésité morbide"
    };
    return translations[bmi] || bmi;
 }
 
 function translateActivityProfile(activityProfile) { //Pour faire la trad des activités 
    const translations = {
-      "sedentary": "sédentaire",
-      "low active": "peu actif",
-      "somewhat active": "activité légère",
-      "active": "actif",
-      "highly active": "grandement actif"
+      "sedentary": "Sédentaire",
+      "low active": "Peu actif",
+      "somewhat active": "Activité légère",
+      "active": "Actif",
+      "highly active": "Grandement actif"
    };
    return translations[activityProfile] || activityProfile;
 }
@@ -38,24 +38,28 @@ const DetailsSlide = ({ emblaApi, client }) => {
       <>
          <div className='details-title-section'>Détails du patient</div>
          <div className='details-content'>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={client.sex === 1 ? maleIcon : femaleIcon} alt="SexIcon" className="icon" />
                </div>
                <p>Sexe : {client.sex === 1 ? 'Homme' : 'Femme'}</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={profilepic} alt="profilepic" className="icon" />
                </div>
-               <p>Année de naissance : {client.birthyear}</p>
+               <p>Age : {(new Date()).getFullYear() - client.birthyear} ans</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={ruler} alt="Height" className="icon" />
                </div>
-               <p>Taille : {client.height} cm</p>
+               <p>Taille : {Math.floor(client.height / 100)}.{client.height % 100} m</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={current} alt="current" className="icon" />
@@ -63,18 +67,21 @@ const DetailsSlide = ({ emblaApi, client }) => {
                <p>IMC* de départ : {translateBmi(client.bmiStart)}
                </p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={goal} alt="goal.svg" className="icon" />
                </div>
                <p>Objectif IMC* : {translateBmi(client.bmiGoal)}</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={current} alt="current.svg" className="icon" />
                </div>
                <p>Poids de départ : {client.weightStart} kg</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   {client.weightStart === client.weightGoal ? (
@@ -89,15 +96,21 @@ const DetailsSlide = ({ emblaApi, client }) => {
                </div>
                <p>Objectif poids : {client.weightGoal} kg</p>
             </div>
+
             <div className="inside-card-details">
                <div className="icon-container">
                   <img src={profilepic} alt="ActivityProfileIcon" className="icon" />
                </div>
                <p>Type de profil : {translateActivityProfile(client.activityProfile)}</p>
             </div>
+
          </div>
-         <p>*IMC = Indice de masse corporelle. </p>
-         <p>Calcul : Poids / Taille x Taille</p>
+         
+         <div>
+            *IMC = Indice de masse corporelle.<br />
+            Calcul : Poids / Taille x Taille
+         </div>
+        
       </>
    )
 }

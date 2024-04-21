@@ -25,7 +25,7 @@ function ClientDetails() {
    <div className='client-details'>
 
      <div className='back-menu'>
-      <button onClick={() => navigate(-1)}><img src={back} alt="back" className='back-icon' /> Retour à la liste</button>
+      <button onClick={() => navigate(-1)}><img src={back} alt="back" className='back-icon' />Retour à la liste</button>
      </div>
 
      <h1>{client.firstname} {client.lastname}</h1>

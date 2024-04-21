@@ -204,6 +204,8 @@ button {
   filter: invert(84%) sepia(3%) saturate(0%) hue-rotate(353deg) brightness(104%) contrast(96%);
   background-color: rgb(190, 190, 190);
   color: #232323;
+  display: flex;
+  align-items: center;
 }
 
 button:hover {
