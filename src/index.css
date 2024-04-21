@@ -17,8 +17,8 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  
-  
+  -moz-osx-font-smoothing: grayscale;
+
   padding-top: 30px;
 }
 
@@ -26,6 +26,7 @@
   font-family: 'Oswald';
   src: url('./assets/fonts/Oswald.ttf') format('truetype');
 }
+
 @font-face {
   font-family: "Inter";
   src: url('./assets/fonts/Inter.ttf') format('truetype');
@@ -38,7 +39,7 @@ h1 {
   line-height: 1.1;
   font-family: "Oswald";
   font-weight: bold;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 15px;
@@ -50,13 +51,13 @@ h2 {
   line-height: 1.1;
   font-family: "Oswald";
   font-weight: bold;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font-weight: 500;
   line-height: 1.1;
 }
 
 p {
-  font-family:"Inter";
+  font-family: "Inter";
   font-size: 16px;
   width: fit-content;
 }
@@ -68,14 +69,16 @@ p {
   transition: filter 300ms;
 }
 
-form{
+form {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -87,52 +90,52 @@ form{
   }
 }
 
-.fitready{
+.fitready {
   line-height: 1.1;
   font-family: "Oswald";
   font-weight: bold;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font-weight: 500;
   margin: 0;
   font-size: 24px;
   display: inline-block;
   border-radius: 5px;
   margin-bottom: 5px;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 /* Style pour les barres */
 .titlebarre {
-  display: inline-block; 
-  width: 30px; 
-  height: 2px; 
-  background-color:#ffffff; 
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #ffffff;
   margin: 0 10px;
   vertical-align: middle;
-  
+
 
 }
 
 /* Style pour le texte */
 .titlefit {
-  display: inline-block; 
-  font-size: 24px; 
-  color: #000; 
+  display: inline-block;
+  font-size: 24px;
+  color: #000;
 }
 
 
 .titlefitdash {
-  display: inline-block; 
-  font-size: 24px; 
-  color: #000; 
+  display: inline-block;
+  font-size: 24px;
+  color: #000;
   align-content: center;
 
 }
 
-.inputSaisie{   
+.inputSaisie {
   width: 180px;
   border: 1px solid rgb(105, 105, 105);
-  border-radius : 10px;
+  border-radius: 10px;
   height: 100%;
   font-family: "Inter";
   outline: none;
@@ -145,20 +148,22 @@ form{
 
 ::-webkit-input-placeholder {
   font-style: italic;
-  color:rgb(140, 140, 140);
+  color: rgb(140, 140, 140);
 }
 
 :-moz-placeholder {
-  font-style: italic;  
-  color:rgb(140, 140, 140);
+  font-style: italic;
+  color: rgb(140, 140, 140);
 }
+
 ::-moz-placeholder {
   font-style: italic;
-  color:rgb(140, 140, 140);
+  color: rgb(140, 140, 140);
 }
-:-ms-input-placeholder {  
+
+:-ms-input-placeholder {
   font-style: italic;
-  color:rgb(140, 140, 140);
+  color: rgb(140, 140, 140);
 }
 
 .loginSubmit {
@@ -176,15 +181,15 @@ body {
   place-items: center;
 }
 
-.logo{
+.logo {
   height: 200px;
-  padding-top:1px;
+  padding-top: 1px;
   padding-bottom: 5px;
 }
 
-.logodash{
+.logodash {
   height: 110px;
-  align-items:end;
+  align-items: end;
 }
 
 button {
@@ -204,6 +209,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -214,29 +220,33 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
-  .icon{
+
+  .icon {
     fill: #000000;
     /*marche pas, voir pour que la couleur s'adapte au thème de l'ordi*/
   }
 }
-.icon{
-  height:20px;
+
+.icon {
+  height: 20px;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(103deg) brightness(105%) contrast(105%);
 }
 
-.icon-trophy{
-  height:20px;
+.icon-trophy {
+  height: 20px;
 }
 
-.client-card{
-  border:1px solid grey;
-  border-radius : 30px;
+.client-card {
+  border: 1px solid grey;
+  border-radius: 30px;
   font-family: "Inter";
   outline: none;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
@@ -244,11 +254,12 @@ button:focus-visible {
   padding: 10px;
   width: 90%;
 }
-.client-card:hover{
+
+.client-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.client-list{
+.client-list {
   display: grid;
   height: 100%;
   grid-auto-flow: row;
@@ -257,8 +268,8 @@ button:focus-visible {
 }
 
 .loader {
-  border: 16px solid #f3f3f3; 
-  border-top: 16px solid #3498db; 
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -267,9 +278,15 @@ button:focus-visible {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .error-p:empty::before {
   content: "\A0";
 }
@@ -278,14 +295,15 @@ button:focus-visible {
   width: 280px;
 }
 
-.search-bar{
-  width:100%;
+.search-bar {
+  width: 100%;
 }
+
 /* ^^^^ moi ici je voulais que ça fill toute la largeur de la div parent*/
-.search-input{
+.search-input {
   height: 2rem;
-  border:1px solid grey;
-  border-radius : 30px;
+  border: 1px solid grey;
+  border-radius: 30px;
   font-family: "Inter";
   outline: none;
   text-align: center;
@@ -295,117 +313,125 @@ button:focus-visible {
 }
 
 
-.search-icon{
+.search-icon {
   height: 30px;
-  fill:#f3f3f3
+  fill: #f3f3f3
 }
 
-.weight-graph{
-  width:100% ;
-  height:200px
+.weight-graph {
+  width: 100%;
+  height: 200px
 }
+
 /*^^ inutilisé */
 
-.content-card{
+.content-card {
   display: grid;
-  grid-auto-flow:column;
-  justify-content: space-between ;
+  grid-auto-flow: column;
+  justify-content: space-between;
   align-items: center;
-  
+
 }
 
-.inside-card{
+.inside-card {
   display: grid;
-  grid-auto-flow:column;
+  grid-auto-flow: column;
   align-items: center;
-  gap:12px;
-  }
+  gap: 12px;
+}
 
-  .name-card{
-    font-size: 25px;
-    font-family: "Oswald";
-    text-align: center;
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-  }
+.name-card {
+  font-size: 25px;
+  font-family: "Oswald";
+  text-align: center;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
 
-  .details-title-section{
-    display: grid;
-    width: 50%;
-    height: 50px;
-    font-size: 25px;
-    font-family: "Oswald";
-    text-align: center;
-    align-content: space-evenly;
-    margin: auto;
-    padding-bottom: 25px;
-  }
+.details-title-section {
+  display: grid;
+  width: 50%;
+  height: 50px;
+  font-size: 25px;
+  font-family: "Oswald";
+  text-align: center;
+  align-content: space-evenly;
+  margin: auto;
+  padding-bottom: 25px;
+}
 
-  .overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+.overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
 
-  .back-menu{
-    padding-top: 15%;
-    display: grid;
-    grid-auto-flow:column;
-    justify-items: start;
-    padding-left: 20px;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-  }
+.back-menu {
+  padding-top: 15%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: start;
+  padding-left: 20px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
 
-  
 
-  .back-icon {
-    width: 20px;
-    height: 20px;
-  }
 
-  .logout-button{
-    display: grid;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background: #3d3b3b;
-    width: 80%;
-    grid-auto-flow: column;
-    align-items: center;
-    z-index: 999;
-    height: auto;
-    font-family: "Inter";
-    font-size: 13px;
-    top: 1%;
-    border-radius: 8px;
-    border: 1px solid  gray;
-    padding-right: 2%;
-  }
+.back-icon {
+  width: 20px;
+  height: 20px;
+}
 
-  .top-band{
-    display: grid;
-    grid-auto-rows: auto;
-  }
+.logout-button {
+  display: grid;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #3d3b3b;
+  width: 80%;
+  grid-auto-flow: column;
+  align-items: center;
+  z-index: 999;
+  height: auto;
+  font-family: "Inter";
+  font-size: 13px;
+  top: 1%;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding-right: 2%;
+}
 
-  .activity-card{
-    padding: 15px;;
-  }
+.top-band {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.activity-card {
+  padding: 15px;
+  ;
+}
 
 /* Embla */
 
-.client-details{
+.client-details {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
@@ -471,7 +497,7 @@ button.embla__button.embla__button--next {
   height: 35%;
 }
 
-.details-content{
+.details-content {
   padding: 15px;
 }
 
@@ -481,19 +507,20 @@ button.embla__button.embla__button--next {
   right: 30px;
 }
 
-.details-content{
+.details-content {
   text-align: left;
 }
 
-.inside-card-details{
-  display:flex;
+.inside-card-details {
+  display: flex;
   align-items: left;
-  gap:10px;
+  gap: 10px;
   padding-top: 2px;
 }
 
-.icon-container{
+.icon-container {
   display: flex;
-  align-items: center; /* Alignement vertical */
+  align-items: center;
+  /* Alignement vertical */
   margin-right: 10px;
 }

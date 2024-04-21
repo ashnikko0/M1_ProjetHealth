@@ -7,38 +7,38 @@ import ScrollUp from "./ScrollUp.jsx";
 
 function Dashboard() {
 
-    const [keyword, setKeyword] = useState([]);
+   const [keyword, setKeyword] = useState([]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
+   useEffect(() => {
+      window.scrollTo(0, 0)
+   }, [])
 
-    const updateKeyword = (keyword) => {
-        setKeyword(keyword);
-    }
+   const updateKeyword = (keyword) => {
+      setKeyword(keyword);
+   }
 
-    return (
-        <>
+   return (
+      <>
 
-            <div className="top-band">
-                <div className="titlefit">
-                    <span className="titlebarre"></span>
-                    <div className="fitready">Fit'Ready</div>
-                    <span className="titlebarre"></span>
-                </div>
+         <div className="top-band">
+            <div className="titlefit">
+               <span className="titlebarre"></span>
+               <div className="fitready">Fit'Ready</div>
+               <span className="titlebarre"></span>
             </div>
+         </div>
 
-            <img src={logo} alt="Logo" className="logodash" />
+         <img src={logo} alt="Logo" className="logodash" />
 
-            <div className="dashboardDiv">
-                <SearchBar keyword={keyword} onChange={updateKeyword} />
-                <ClientList searchQuery={keyword} />
-            </div>
+         <div className="dashboardDiv">
+            <SearchBar keyword={keyword} onChange={updateKeyword} />
+            <ClientList searchQuery={keyword} />
+         </div>
 
-            <ScrollUp />
+         <ScrollUp />
 
-        </>
-    )
+      </>
+   )
 }
 
 export default Dashboard;

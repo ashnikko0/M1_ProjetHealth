@@ -9,52 +9,52 @@ function ClientList({ searchQuery }) {
   const [filteredClients, setFilteredClients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-   
+
   useEffect(() => {
-    async function loadClients() {
+   async function loadClients() {
 
-      let api = "";
+     let api = "";
 
-      api = "https://health.shrp.dev/items/people";
+     api = "https://health.shrp.dev/items/people";
 
-      try {
+     try {
 
-        setIsLoading(true);
-        setIsError(false);
+      setIsLoading(true);
+      setIsError(false);
 
-        const response = await axios.get(api);
+      const response = await axios.get(api);
 
-        const data = await response.data.data;
+      const data = await response.data.data;
 
-        setClients(data);
-        setFilteredClients(data);
-        setIsLoading(false);
-        setIsError(false);
+      setClients(data);
+      setFilteredClients(data);
+      setIsLoading(false);
+      setIsError(false);
 
-      } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
-      }
-    }
+     } catch (error) {
+      setIsError(true);
+      setIsLoading(false);
+     }
+   }
 
-    loadClients();
+   loadClients();
 
   }, []);
 
   useEffect(() => {
-    setFilteredClients(clients.filter(client => {
-      return `${client.firstname.toLowerCase()} ${client.lastname.toLowerCase()}`.includes(searchQuery);
-    }));
+   setFilteredClients(clients.filter(client => {
+     return `${client.firstname.toLowerCase()} ${client.lastname.toLowerCase()}`.includes(searchQuery);
+   }));
   }, [searchQuery])
 
   return (
-    <div className="client-list">
-      {isLoading && <div className="loader"/>}
-      {isError && <p>Une erreur s'est produite</p>}
-      {filteredClients.map((client) => (
-        <ClientCard key={client.id} client={client}/>
-      ))}
-    </div>
+   <div className="client-list">
+     {isLoading && <div className="loader" />}
+     {isError && <p>Une erreur s'est produite</p>}
+     {filteredClients.map((client) => (
+      <ClientCard key={client.id} client={client} />
+     ))}
+   </div>
   );
 }
 
