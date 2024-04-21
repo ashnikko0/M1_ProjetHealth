@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, ResponsiveContainer, Legend } from 'recharts';
+import { LineChart, XAxis, YAxis, CartesianGrid, Line, ReferenceLine, ResponsiveContainer } from 'recharts';
 import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react'
 import axios from 'axios';
 
 import { PrevButton, NextButton, usePrevNextButtons } from './EmblaCarousel';
+import AutoHeight from 'embla-carousel-auto-height'
 import ActivityCard from './ActivityCard';
 import ScrollUp from './ScrollUp';
 
 import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import back from "../assets/back.svg";
-import trophy from "../assets/trophy.png";
 import tropheegold from "../assets/tropheegold.png";
 import tropheesilver from "../assets/tropheesilver.png";
 import tropheebronze from "../assets/tropheebronze.png";
@@ -47,7 +47,7 @@ function translateActivityProfile(activityProfile) { //Pour faire la trad des ac
 
 function ClientDetails() {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [AutoHeight()]);
 
   const {
     prevBtnDisabled,
@@ -68,6 +68,10 @@ function ClientDetails() {
   const [isActivityError, setisActivityError] = useState(false);
 
   const [visibleActivities, setVisibleActivities] = useState(10); // Initial value
+
+  useEffect(() => {
+    if(emblaApi) emblaApi.reInit();
+  }, [visibleActivities, physioData, activityData])
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -132,6 +136,7 @@ function ClientDetails() {
     }
 
     window.scrollTo(0, 0);
+
     loadPhysioData();
     loadActivityData();
 

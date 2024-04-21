@@ -417,13 +417,14 @@ button:focus-visible {
 
 .embla__container {
   display: flex;
+  align-items: flex-start;
   width: 360px;
 }
 
 .embla__slide {
   position: relative;
   flex: 0 0 100%;
-  min-width: 0;
+  height: fit-content;
   padding: 15px;
 }
 
