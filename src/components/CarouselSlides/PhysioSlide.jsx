@@ -47,7 +47,7 @@ const PhysioSlide = ({ emblaApi, client, id }) => {
 
   return (
    <>
-     <div className='details-title-section'>Données Physiologiques</div>
+     <h3 className='details-title-section'>Données Physiologiques</h3>
      {isPhysioLoading && <div className="loader" />}
      {isPhysioError && <p>Une erreur s'est produite</p>}
      {physioData &&

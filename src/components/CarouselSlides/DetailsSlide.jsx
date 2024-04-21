@@ -36,7 +36,7 @@ const DetailsSlide = ({ emblaApi, client }) => {
 
    return (
       <>
-         <div className='details-title-section'>Détails du patient</div>
+         <h3 className='details-title-section'>Détails du patient</h3>
          <div className='details-content'>
 
             <div className="inside-card-details">
@@ -105,7 +105,7 @@ const DetailsSlide = ({ emblaApi, client }) => {
             </div>
 
          </div>
-         
+
          <div>
             *IMC = Indice de masse corporelle.<br />
             Calcul : Poids / Taille x Taille

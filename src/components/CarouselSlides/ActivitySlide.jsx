@@ -55,11 +55,10 @@ const ActivitySlide = ({ emblaApi, id }) => {
 
    return (
       <>
-         <div className='details-title-section'>Activités Physiques</div>
+         <h3 className='details-title-section'>Activités Physiques</h3>
          {isActivityLoading && <div className="loader" />}
          {isActivityError && <p>Une erreur s'est produite</p>}
          {activityData && <>
-            <p>{caloriesData}</p>
             <ResponsiveContainer width="90%" height={200} >
                <LineChart data={activityData}>
                   <XAxis dataKey="date" reversed={true} interval="preserveEnd" />
@@ -69,13 +68,13 @@ const ActivitySlide = ({ emblaApi, id }) => {
                </LineChart>
             </ResponsiveContainer>
 
-            <div>
-               <div className='details-title-section'>Historique des activités</div>
+            <div className="activites-history">
+               <h3 className='details-title-section activites-history-title'>Historique des activités</h3>
                {activityData.slice(0, visibleActivities).map((activity) => (
                   <ActivityCard key={activity.id} activity={activity} />
                ))}
                {activityData.length > visibleActivities && (
-                  <button onClick={() => setVisibleActivities(visibleActivities + 10)}>
+                  <button className="more-activites-button" onClick={() => setVisibleActivities(visibleActivities + 10)}>
                      Voir plus
                   </button>
                )}
