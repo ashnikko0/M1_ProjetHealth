@@ -95,6 +95,8 @@ const DetailsSlide = ({ emblaApi, client }) => {
                   )}
                </div>
                <p>Objectif poids : {client.weightGoal} kg</p>
+               
+               
             </div>
 
             <div className="inside-card-details">
@@ -106,7 +108,7 @@ const DetailsSlide = ({ emblaApi, client }) => {
 
          </div>
 
-         <div>
+         <div style={{fontFamily:'Inter'}}>
             *IMC = Indice de masse corporelle.<br />
             Calcul : Poids / Taille x Taille
          </div>

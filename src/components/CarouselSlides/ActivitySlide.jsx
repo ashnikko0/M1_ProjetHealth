@@ -72,9 +72,11 @@ const ActivitySlide = ({ emblaApi, id }) => {
 
             <div className="activites-history">
                <h3 className='details-title-section activites-history-title'>Historique des activités</h3>
+               <div className="activity-cards-container">
                {activityData.slice(0, visibleActivities).map((activity) => (
                   <ActivityCard key={activity.id} activity={activity} />
                ))}
+               </div>
                {activityData.length > visibleActivities && (
                   <button className="more-activites-button" onClick={() => setVisibleActivities(visibleActivities + 10)}>
                      Voir plus
