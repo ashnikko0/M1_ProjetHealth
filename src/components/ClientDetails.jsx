@@ -21,6 +21,30 @@ import goal from "../assets/goal.svg";
 import current from "../assets/current.svg";
 import profilepic from "../assets/profilepic.svg";
 
+function translateBmi(bmi) { //Pour faire la trad des bmi
+  const translations = {
+    "underweight": "sous-poids",
+    "normal": "normal",
+    "overweight": "surpoids",
+    "moderate obesity" : "obésité modéré",
+    "severe obesity" : "obésité sévère",
+    "morbid obesity" : "obésité morbide"
+  };
+  return translations[bmi] || bmi;
+}
+
+function translateActivityProfile(activityProfile) { //Pour faire la trad des activités 
+  const translations = {
+    "sedentary" : "sédentaire",
+    "low active" : "peu actif",
+    "somewhat active" : "activité légère",
+    "active" : "actif",
+    "highly active" : "grandement actif"
+  };
+  return translations[activityProfile] || activityProfile;
+}
+
+
 function ClientDetails() {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -155,25 +179,26 @@ function ClientDetails() {
                 <div className="icon-container">
                   <img src={ruler} alt="Height" className="icon" />
                 </div>
-                <p>Taille : {client.height}</p>
+                <p>Taille : {client.height} cm</p>
               </div>
               <div className="inside-card-details">
                 <div className="icon-container">
                   <img src={current} alt="current" className="icon" />
                 </div>
-                <p>IMC* de départ : {client.bmiStart}</p>
+                <p>IMC* de départ : {translateBmi(client.bmiStart)}
+                </p>
               </div>
               <div className="inside-card-details">
                 <div className="icon-container">
                   <img src={goal} alt="goal.svg" className="icon" />
                 </div>
-                <p>Objectif IMC* : {client.bmiGoal}</p>
+                <p>Objectif IMC* : {translateBmi(client.bmiGoal)}</p>
               </div>
               <div className="inside-card-details">
                 <div className="icon-container">
                   <img src={current} alt="current.svg" className="icon" />
                 </div>
-                <p>Poids de départ : {client.weightStart}</p>
+                <p>Poids de départ : {client.weightStart} kg</p>
               </div>
               <div className="inside-card-details">
                 <div className="icon-container">
@@ -187,7 +212,7 @@ function ClientDetails() {
                     <span></span>
                   )}
                 </div>
-                <p>Objectif poids : {client.weightGoal}</p>
+                <p>Objectif poids : {client.weightGoal} kg</p>
               </div>
 
 
@@ -195,7 +220,7 @@ function ClientDetails() {
     <div className="icon-container">
       <img src={profilepic} alt="ActivityProfileIcon" className="icon" />
     </div>
-      <p>Type de profil : {client.activityProfile}</p>
+      <p>Type de profil : {translateActivityProfile(client.activityProfile)}</p>
     </div>
 
               
