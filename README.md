@@ -3,6 +3,10 @@
 - SIPP Jules
 - SCHANG Amandine
 
+# Démonstration vidéo
+
+https://github.com/ashnikko0/M1_ProjetHealth/assets/19290903/ea7cea9b-cf07-4b5e-b048-907a1e4d9072
+
 # TODO
 
 ## Spécifications fonctionnelles
