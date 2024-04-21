@@ -8,7 +8,6 @@ import ActivityCard from "../ActivityCard";
 const ActivitySlide = ({ emblaApi, id }) => {
 
    const [activityData, setActivityData] = useState(null); // État pour stocker les détails du client
-   const [caloriesData, setCaloriesData] = useState(null);
    const [isActivityLoading, setisActivityLoading] = useState(false);
    const [isActivityError, setisActivityError] = useState(false);
 
@@ -32,12 +31,9 @@ const ActivitySlide = ({ emblaApi, id }) => {
 
             const data = await response.data.data;
 
-            var sum = 0;
             data.forEach(activity => {
                activity.date = format(new Date(activity.date), 'dd/MM/yyyy');;
-               sum += parseFloat(activity.consumedCalories);
             });
-            setCaloriesData(sum);
 
             setActivityData(data);
             setisActivityLoading(false);
